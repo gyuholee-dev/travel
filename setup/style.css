@@ -171,3 +171,7 @@ section.setup .buttons > *:not(:last-child) {
 .btn:hover {
   cursor: pointer;
 }
+
+input[type=radio], input[type=checkbox] {
+  margin-right: 5px;
+}

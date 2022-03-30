@@ -169,3 +169,10 @@ section.setup {
   }
 }
 
+input {
+  &[type=radio],
+  &[type=checkbox] {
+    margin-right: 5px;
+  }
+}
+

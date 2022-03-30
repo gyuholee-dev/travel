@@ -58,3 +58,39 @@ function makeDBConfig($configFile, $dbConfig, $log=true) {
     $msg['log'] = '설정파일 저장됨';
   }
 }
+
+function createTable($tables, $drop=false) {
+  global $DB;
+  global $msg;
+
+  foreach ($tables as $key => $table) {
+    if ($drop) {
+      $sql = "DROP TABLE IF EXISTS $table";
+      mysqli_query($DB, $sql);
+    }
+    /* $sql = "CREATE TABLE $table (
+      id INT(11) NOT NULL AUTO_INCREMENT,
+      name VARCHAR(255) NOT NULL,
+      email VARCHAR(255) NOT NULL,
+      password VARCHAR(255) NOT NULL,
+      PRIMARY KEY (id)
+    )"; */
+    // mysqli_query($DB, $sql);
+  }
+}
+
+function checkTable($tables) {
+  global $DB;
+  global $msg;
+
+  foreach ($tables as $key => $table) {
+    $sql = "SHOW TABLES LIKE '$table'";
+    $result = mysqli_query($DB, $sql);
+    if (mysqli_num_rows($result) == 0) {
+      $msg['class'] = 'red';
+      $msg['log'] = '테이블 없음';
+      return false;
+    }
+  }
+  return true;
+}
