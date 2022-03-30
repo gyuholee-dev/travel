@@ -1,0 +1,116 @@
+// ## 변수
+$color-emp: #34a3e7;
+$color-shine: #eee;
+$color-light: #bbb;
+$color-blue: #62abff;
+$color-lightgrey: #aaaaaa;
+$color-grey: #808080;
+$color-dark: #666;
+$color-black: #222;
+$color-background: #eeeeee;
+
+$max-width: 960px;
+
+// 엘리먼트 기본값
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "맑은 고딕", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  color: $color-black;
+  font-size: 16px;
+  word-break: break-all;
+  background-color: $color-background;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  width: -webkit-fill-available;
+  border-collapse: collapse;
+}
+
+#log {
+  width: 100%;
+  padding: 5px 10px;
+  color: white;
+  font-size: 0.9em;
+  background-color: red;
+  &.blue {
+    background-color: blue;
+  }
+  &.green {
+    background-color: green;
+  }
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+section.setup {
+  margin-top: 30px;
+  background-color: white;
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  table {
+    margin-bottom: 15px;
+    th, td {
+      padding: 2px 5px;
+    }
+    input {
+      min-width: 200px;
+      padding: 3px;
+    }
+  }
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    >*:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.btn {
+  font-size: 1em;
+  padding: 3px;
+  min-width: 80px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+

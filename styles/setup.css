@@ -1,0 +1,110 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "맑은 고딕", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  color: #222;
+  font-size: 16px;
+  word-break: break-all;
+  background-color: #eeeeee;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  width: -webkit-fill-available;
+  border-collapse: collapse;
+}
+
+#log {
+  width: 100%;
+  padding: 5px 10px;
+  color: white;
+  font-size: 0.9em;
+  background-color: red;
+}
+
+#log.blue {
+  background-color: blue;
+}
+
+#log.green {
+  background-color: green;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+section.setup {
+  margin-top: 30px;
+  background-color: white;
+}
+
+section.setup .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+section.setup table {
+  margin-bottom: 15px;
+}
+
+section.setup table th, section.setup table td {
+  padding: 2px 5px;
+}
+
+section.setup table input {
+  min-width: 200px;
+  padding: 3px;
+}
+
+section.setup .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.setup .buttons > *:not(:last-child) {
+  margin-right: 10px;
+}
+
+.btn {
+  font-size: 1em;
+  padding: 3px;
+  min-width: 80px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
