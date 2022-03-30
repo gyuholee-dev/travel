@@ -9,6 +9,7 @@ $color-dark: #666;
 $color-black: #222;
 $color-background: #eeeeee;
 
+$menu-height: 40px;
 $max-width: 960px;
 
 // 엘리먼트 기본값
@@ -43,17 +44,60 @@ table {
   border-collapse: collapse;
 }
 
-#log {
+#message {
   width: 100%;
   padding: 5px 10px;
+  background-color: gray;
   color: white;
   font-size: 0.9em;
-  background-color: red;
+  text-align: center;
   &.blue {
     background-color: blue;
   }
   &.green {
     background-color: green;
+  }
+  &.red {
+    background-color: red;
+  }
+}
+
+header, nav, section, footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  height: $menu-height;
+  background-color: white;
+  border-bottom: 1px solid $color-lightgrey;
+}
+
+nav.menu {
+  height: $menu-height;
+  >ul {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+    li {
+      height: inherit;
+      min-width: 120px;
+      text-align: center;
+      &.active {
+        border-bottom: 4px solid $color-emp;
+      }
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: $menu-height;
+      &:hover {
+        color: $color-emp;
+      }
+    }
   }
 }
 
@@ -93,6 +137,11 @@ section.setup {
     input {
       min-width: 200px;
       padding: 3px;
+      border: 1px solid $color-grey;
+      border-radius: 3px;
+      &[readonly] {
+        background-color: $color-shine;
+      }
     }
   }
   .buttons {
@@ -106,7 +155,7 @@ section.setup {
 }
 
 .btn {
-  font-size: 1em;
+  font-size: 0.95em;
   padding: 3px;
   min-width: 80px;
   &:hover {
