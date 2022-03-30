@@ -98,6 +98,12 @@ nav.menu {
         color: $color-emp;
       }
     }
+    li.disabled {
+      color: $color-lightgrey;
+      a {
+        pointer-events: none;
+      }
+    }
   }
 }
 

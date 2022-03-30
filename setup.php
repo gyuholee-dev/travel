@@ -10,9 +10,35 @@ $msg = array( // 로그
   'log' => '',
 ); 
 
-// 리퀘스트 액션
+// 액션
 $action = 'DB'; // DB, TABLE, DATA
 $action = isset($_GET['action'])?$_GET['action']:$action;
+
+// DB 컨피그 기본값
+$dbConfig = array();
+if ($_SERVER['HTTP_HOST'] == 'localhost') { // 로컬호스트
+  $configFile = 'db.localhost.json';
+  $dbConfig = [
+    'host' => 'localhost',
+    'user' => 'root',
+    'pass' => '',
+    'database' => 'travel',
+  ];
+} else { // cafe24
+  $configFile = 'db.cafe24.json';
+  $dbConfig = [
+    'host' => 'localhost',
+    'user' => 'userid',
+    'pass' => 'userpassword',
+    'database' => 'userid',
+  ];
+}
+// 설정파일 로드
+if (file_exists('configs/'.$configFile)) {
+  $dbConfig = json_decode(file_get_contents('configs/'.$configFile),true);
+} else { // 존재하지 않을 경우 에러 메시지 출력
+  $msg['log'] = 'DB 설정파일을 생성해 주세요';
+}
 
 // 액션 리퀘스트 값에 따라 각각 다른 페이지를 인클루드한다.
 switch ($action) {
@@ -42,13 +68,22 @@ if ($msg['log'] != '') {
 // 네비게이션 메뉴
 $active = ['DB'=>'','TABLE'=>'','DATA'=>''];
 $active[$action] = 'active';
+$disabled = checkDB($dbConfig, false) ? '' : 'disabled';
 $nav = <<<HTML
   <nav class="menu">
     <ul>
-      <li class="$active[DB]"><a href="setup.php?action=DB">MariaDB 설정</a></li>
-      <li class="$active[TABLE]"><a href="setup.php?action=TABLE">테이블 생성</a></li>
-      <li class="$active[DATA]"><a href="setup.php?action=DATA">데이터 입력</a></li>
-      <li><a href="main.php">사이트 메인</a></li>
+      <li class="$active[DB]">
+        <a href="setup.php?action=DB">MariaDB 설정</a>
+      </li>
+      <li class="$active[TABLE] $disabled">
+        <a href="setup.php?action=TABLE">테이블 생성</a>
+      </li>
+      <li class="$active[DATA] $disabled">
+        <a href="setup.php?action=DATA">데이터 입력</a>
+      </li>
+      <li class="$disabled">
+        <a href="main.php">사이트 메인</a>
+      </li>
     </ul>
   </nav>
 HTML;

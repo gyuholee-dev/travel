@@ -95,6 +95,14 @@ nav.menu > ul a:hover {
   color: #34a3e7;
 }
 
+nav.menu > ul li.disabled {
+  color: #aaaaaa;
+}
+
+nav.menu > ul li.disabled a {
+  pointer-events: none;
+}
+
 #container {
   display: flex;
   flex-direction: column;
