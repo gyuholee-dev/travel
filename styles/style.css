@@ -32,16 +32,30 @@ header{width: 100%; min-width: 960px; height: 60px;margin: auto;
     font-weight: bold;transition: all 0.4s;}
 
 #content{width: 960px; height: auto;margin: auto;text-align: center;}  
-.search{width: 960px; height: 250px; text-align: center;margin: auto;}
-.search-box{width: 600px;}
-.search-top{width: 500px;
-    text-align: center;
-    border-bottom: 1px solid #999;}
-.search-top p:{width: 240px;}
-.search-top p:hover{color: #333;cursor: pointer;
-    font-weight: bold;transition: all 0.4s;}
-.search-bottom{}
+.search{width: 960px; height: 250px; text-align: center;
+    margin: auto;padding-top: 30px;}
+.search-box{width: 600px; border: 1px solid rgb(200, 200, 200); 
+             border-radius: 20px; margin: auto;}
+.search-top{width: 500px;height: 20px; margin: auto;
+    text-align: center;}
+.pp1{width: 240px;height: 30px; 
+    float: left; line-height: 30px;border-bottom: 1px solid #999;}
+.pp1:hover{color: #999;cursor: pointer;border-bottom: 2px solid #999;
+    font-weight: bold;transition: all 0.3s;}
+.search-bottom{width: 500px;height: 60px; margin: auto;}
+
 .table1{}
+.table1 input[type=text]{border: none;
+    background-color: rgb(200, 200, 200);
+    padding: 5px; border-radius: 5px;
+}
+.table1 input[type=button]{border: none;
+    background-color: #F26E62;color: #fff;
+    padding: 5px; border-radius: 5px;}
+.table1 input[type=button]:hover{cursor: pointer;
+    transition: all 0.4s;opacity: 70%;}
+
+
 
 .main-event{}
 .main-event-img{}
