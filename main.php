@@ -39,7 +39,7 @@ $footer = strtr(file_get_contents('templates/footer.html'), $footer_values);
 
 // 랜더링 --------------------------------------------------
 
-$content_values = array( 
+$content_values = array(
   '{head}' => $head,
   '{header}' => $header,
   '{nav}' => $nav,

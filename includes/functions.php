@@ -1,6 +1,7 @@
 <?php // functions.php
 
-// DB 접속 검사
+// DB 접속
+// TODO: 오류메시지를 배열로 변경
 function connectDB($dbConfig, $log=true) {
   global $DB;
   global $MSG;
