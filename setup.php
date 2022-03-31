@@ -1,6 +1,11 @@
 <?php // 처음 설정
 require_once 'setup/functions.php';
 
+// 로그인 세션
+/* if (!isset($_SESSION['user'])) {
+  return false;
+} */
+
 // 변수 선언
 $content = ''; // 컨텐츠
 $nav = ''; // 네비게이션 메뉴
@@ -11,7 +16,7 @@ $msg = array( // 로그
 ); 
 
 // 액션
-$action = 'DB'; // DB, TABLE, DATA
+$action = 'LOGIN'; // LOGIN, DB, TABLE, DATA
 $action = isset($_GET['action'])?$_GET['action']:$action;
 
 // DB 컨피그 기본값
@@ -42,6 +47,11 @@ if (file_exists('configs/'.$configFile)) {
 
 // 액션 리퀘스트 값에 따라 각각 다른 페이지를 인클루드한다.
 switch ($action) {
+  // 로그인
+  case 'LOGIN':
+    include 'setup/_login.php';
+    break;
+
   // 데이터베이스 설정
   case 'DB':
     include 'setup/_db.php';
