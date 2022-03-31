@@ -7,7 +7,10 @@
 a{text-decoration: none;color: inherit;}
 p{font-size: 1em; color: #666;font-family: 'NanumSquareRound';}
 header{width: 100%; min-width: 960px; height: 60px;margin: auto;
-          position: relative;background-color: white;opacity: 80%;}
+          position: relative;background-color: white;opacity: 100%;}
+header::after {content: "";
+    display: block;
+    clear: both;}
 .top{float: left; opacity: 100%; position: fixed;}
 .logo{width: 300px;height: 60px;padding: 10px 20px;padding-left: 40px; float: left;}
 .logo img{width: 300px; height: auto;}
@@ -30,38 +33,56 @@ header{width: 100%; min-width: 960px; height: 60px;margin: auto;
 .right p{width: 100px;float: left;}
 .right p:hover{color: #333;cursor: pointer;
     font-weight: bold;transition: all 0.4s;}
-
+#bodycolor{width: 100%;height: auto;}
+#bodycolor::after {content: "";
+    display: block;
+    clear: both;}
 #content{width: 960px; height: auto;margin: auto;text-align: center;}  
-.search{width: 960px; height: 250px; text-align: center;
+.search{width: 960px; height: 180px; text-align: center;
     margin: auto;padding-top: 30px;}
-.search-box{width: 600px; border: 1px solid rgb(200, 200, 200); 
+.search-box{width: 600px; height: 150px; border: 1px solid rgb(200, 200, 200); 
              border-radius: 20px; margin: auto;}
 .search-top{width: 500px;height: 20px; margin: auto;
+    margin-top: 10px;margin-bottom: 5px;
     text-align: center;}
 .pp1{width: 240px;height: 30px; 
     float: left; line-height: 30px;border-bottom: 1px solid #999;}
-.pp1:hover{color: #999;cursor: pointer;border-bottom: 2px solid #999;
+.pp1:hover{color: #F26E62;cursor: pointer;border-bottom: 2px solid #F26E62;
     font-weight: bold;transition: all 0.3s;}
 .search-bottom{width: 500px;height: 60px; margin: auto;}
 
-.table1{}
-.table1 input[type=text]{border: none;
-    background-color: rgb(200, 200, 200);
+.table1{margin: auto;}
+.table1 input[type=text]{border: 1px solid rgb(200, 200, 200);
+    font-size: 1.2em;
     padding: 5px; border-radius: 5px;
 }
-.table1 input[type=button]{border: none;
-    background-color: #F26E62;color: #fff;
-    padding: 5px; border-radius: 5px;}
+.table1 input[type=text]:hover{background-color: rgb(200, 200, 200);
+}
+.table1 input[type=button]{border: none;font-size: 1em;
+    background-color: #F26E62;color: #fff;opacity: 70%;
+    padding: 10px; border-radius: 10px;}
 .table1 input[type=button]:hover{cursor: pointer;
-    transition: all 0.4s;opacity: 70%;}
+    transition: all 0.4s;opacity: 100%;}
 
 
 
-.main-event{}
-.main-event-img{}
-.main-event-write{}
-.main-event-button{}
-
+.main-event{width: 960px;height: 600px;overflow: hidden;position: relative;}
+.main-event-img{width: 960px;height: 600px;overflow: hidden;}
+.main-event-img img{width: 960px;height: auto;}
+.main-event-write{position: absolute;width: 560px;height: 400px;top: 50px;
+    left: 200px;}
+.pp2{font-size: 3em;color: #2a0528;margin-bottom: 50px;
+    text-shadow:  1px 3px 5px #7c7c7c;;}
+.pp3{font-size: 2em;color: #1d021b;}    
+.main-event-button{ width: 160px;height: 50px; left:400px;
+    position: absolute;bottom: 120px; }
+.main-event-button input[type=button]{border: 1px solid #fff;
+    padding: 15px; color: #fff; 
+    border: none;font-size: 1.2em; background-color: none;
+    border-radius: 25px;
+    }
+.main-event-button input[type=button]:hover{
+      font-weight: bold; font-size: 1.3em; }
 .helper{}
 .helper-cont{}
 .helper-cont>div a>img{}
