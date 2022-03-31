@@ -1,7 +1,53 @@
 <?php // main.php
-
 // 초기화
 require_once 'includes/init.php';
-// 함수
-require_once 'includes/functions.php';
 
+// 사이트 정보
+$INFO = [
+  'title'=>'블라썸투어',
+  'subtitle'=>'여행을 즐기는 방법',
+  'description'=>'블라썸투어는 여행을 즐기는 방법을 소개합니다.',
+  'author'=>'블라썸투어',
+];
+
+// 컨텐츠
+$head = '';
+$header = '';
+$nav = '';
+$content = '';
+$aside = '';
+$footer = '';
+
+// 페이지
+include "pages/$PAGE.php";
+
+// 헤드
+$head_values = [
+  '{title}' => "$INFO[title] : $INFO[subtitle]",
+  '{description}' => "$INFO[description]",
+];
+$head = strtr(file_get_contents('templates/head.html'), $head_values);
+
+// 헤더
+$header_values = [];
+$header = strtr(file_get_contents('templates/header.html'), $header_values);
+
+// 푸터
+$footer_values = [];
+$footer = strtr(file_get_contents('templates/footer.html'), $footer_values);
+
+
+// 랜더링 --------------------------------------------------
+
+$content_values = array( 
+  '{head}' => $head,
+  '{header}' => $header,
+  '{nav}' => $nav,
+  '{content}' => $content,
+  '{aside}' => $aside,
+  '{footer}' => $footer,
+);
+
+$html = file_get_contents('templates/template.html');
+$html = strtr($html, $content_values);
+echo $html;
