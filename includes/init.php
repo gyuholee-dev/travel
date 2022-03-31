@@ -1,4 +1,9 @@
 <?php // init.php
+// 함수
+require_once 'includes/functions.php';
+
+// 로그
+global $MSG;
 
 // 사이트 정보
 global $INFO;
@@ -11,6 +16,9 @@ global $CODE;
 global $DO;
 
 
+// 로그
+$MSG = ['class'=>'', 'log'=>''];
+
 // 사이트 정보
 $INFO = [
   'title'=>'블라썸투어',
@@ -21,18 +29,15 @@ $INFO = [
 
 // DB
 // TODO: DB 없이도 돌아가도록 오류 핸들링할것
-/* if ($_SERVER['HTTP_HOST']=='localhost') {
+if ($_SERVER['HTTP_HOST']=='localhost') {
   // 서버가 로컬호스트일 경우 기본 DB 설정파일을 불러옴
   $dbConfig = json_decode(file_get_contents('configs/db.localhost.json'),true);
 } else {
   // 서버가 cafe24일 경우 cafe24 DB 설정파일을 불러옴
   $dbConfig = json_decode(file_get_contents('configs/db.cafe24.json'),true);
 }
-$host = $dbConfig['host'];
-$user = $dbConfig['user'];
-$pass = $dbConfig['pass'];
-$database = $dbConfig['database'];
-$DB = mysqli_connect($host, $user, $pass, $database); */
+// DB 접속. 오류는 $MSG에 기록됨
+connectDB($dbConfig);
 
 /* 리퀘스트
 page: main, about, tour, contact, etc...
