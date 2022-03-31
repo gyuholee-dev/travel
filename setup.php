@@ -7,33 +7,6 @@ $header = ''; // 헤더
 $message = ''; // 메시지
 $content = ''; // 컨텐츠
 
-// 헤더
-if ($USER && $ACT != 'login') {
-    $active = ['db'=>'','table'=>'','data'=>''];
-    $active[$ACT] = 'active';
-    $disabled = checkDB($DBCONF) ? '' : 'disabled';
-    $header = <<<HTML
-    <header>
-      <nav class="menu">
-        <ul>
-          <li class="$active[db]">
-            <a href="setup.php?action=db">MariaDB 설정</a>
-          </li>
-          <li class="$active[table] $disabled">
-            <a href="setup.php?action=table">테이블 생성</a>
-          </li>
-          <li class="$active[data] $disabled">
-            <a href="setup.php?action=data">데이터 입력</a>
-          </li>
-          <li class="$disabled">
-            <a href="main.php">사이트 메인</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  HTML;
-}
-
 // 컨텐츠
 // 액션 리퀘스트 값에 따라 각각 다른 페이지를 인클루드한다.
 if (!$USER) {
@@ -65,7 +38,32 @@ if ($MSG['log'] != '') {
   HTML;
 }
 
-
+// 헤더
+if ($USER && $ACT != 'login') {
+  $active = ['db'=>'','table'=>'','data'=>''];
+  $active[$ACT] = 'active';
+  $disabled = checkDB($DBCONF) ? '' : 'disabled';
+  $header = <<<HTML
+  <header>
+    <nav class="menu">
+      <ul>
+        <li class="$active[db]">
+          <a href="setup.php?action=db">MariaDB 설정</a>
+        </li>
+        <li class="$active[table] $disabled">
+          <a href="setup.php?action=table">테이블 생성</a>
+        </li>
+        <li class="$active[data] $disabled">
+          <a href="setup.php?action=data">데이터 입력</a>
+        </li>
+        <li class="$disabled">
+          <a href="main.php">사이트 메인</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+HTML;
+}
 
 //------------------------ 랜더링 ------------------------
 
