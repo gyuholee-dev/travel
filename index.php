@@ -39,8 +39,8 @@
           <div class="search">
             <div class="search-box">
             <div class="search-top">
-              <p><a href="#">국내투어</a></p>
-              <p><a href="#">해외투어</a></p>
+              <p class="pp1"><a href="#">국내투어</a></p>
+              <p class="pp1"><a href="#">해외투어</a></p>
             </div><!-- search-top -->
             <div class="search-bottom">
               <form name="frm1" method="post" action="search_ok.php">
