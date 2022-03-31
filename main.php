@@ -2,6 +2,14 @@
 // 초기화
 require_once 'includes/init.php';
 
+// 사이트 정보
+$INFO = [
+  'title'=>'블라썸투어',
+  'subtitle'=>'여행을 즐기는 방법',
+  'description'=>'블라썸투어는 여행을 즐기는 방법을 소개합니다.',
+  'author'=>'블라썸투어',
+];
+
 // 컨텐츠
 $head = '';
 $header = '';
@@ -9,6 +17,9 @@ $nav = '';
 $content = '';
 $aside = '';
 $footer = '';
+
+// 페이지
+include "pages/$PAGE.php";
 
 // 헤드
 $head_values = [
@@ -24,9 +35,6 @@ $header = strtr(file_get_contents('templates/header.html'), $header_values);
 // 푸터
 $footer_values = [];
 $footer = strtr(file_get_contents('templates/footer.html'), $footer_values);
-
-// 콘텐츠
-include "pages/$PAGE.php";
 
 
 // 랜더링 --------------------------------------------------

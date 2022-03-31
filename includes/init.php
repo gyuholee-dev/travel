@@ -15,17 +15,8 @@ global $ACT;
 global $CODE;
 global $DO;
 
-
 // 로그
 $MSG = ['class'=>'', 'log'=>''];
-
-// 사이트 정보
-$INFO = [
-  'title'=>'블라썸투어',
-  'subtitle'=>'여행을 즐기는 방법',
-  'description'=>'블라썸투어는 여행을 즐기는 방법을 소개합니다.',
-  'author'=>'블라썸투어',
-];
 
 // DB
 // TODO: DB 없이도 돌아가도록 오류 핸들링할것
