@@ -2,20 +2,18 @@
 
 // 포스트 서브밋 처리
 if (isset($_POST['confirm'])) {
-  $dbConfig = [
-    'host' => $_POST['host'],
-    'user' => $_POST['user'],
-    'pass' => $_POST['pass'],
-    'database' => $_POST['database'],
-  ];
+  $DBCONF['host'] = $_POST['host'];
+  $DBCONF['user'] = $_POST['user'];
+  $DBCONF['pass'] = $_POST['pass'];
+  $DBCONF['database'] = $_POST['database'];
 
   if ($_POST['confirm']=='DB생성') { // DB생성
-    createDB($dbConfig);
-    makeDBConfig($configFile, $dbConfig, false);
+    createDB($DBCONF);
+    makeDBConfig($DBCONF, false);
   } elseif ($_POST['confirm']=='테스트') { // 테스트
-    checkDB($dbConfig);
+    checkDB($DBCONF, true);
   } elseif ($_POST['confirm']=='세이브') { // 설정파일 저장
-    makeDBConfig($configFile, $dbConfig);
+    makeDBConfig($DBCONF, true);
     // header('Location: setup.php');
   }
 }
@@ -27,19 +25,19 @@ $content .= <<<HTML
       <table>
         <tr>
           <td>호스트</td>
-          <td><input type="text" name="host" value="$dbConfig[host]" readonly required></td>
+          <td><input type="text" name="host" value="$DBCONF[host]" readonly required></td>
         </tr>
         <tr>
           <td>사용자</td>
-          <td><input type="text" name="user" value="$dbConfig[user]" required></td>
+          <td><input type="text" name="user" value="$DBCONF[user]" required></td>
         </tr>
         <tr>
           <td>비밀번호</td>
-          <td><input type="text" name="pass" value="$dbConfig[pass]"></td>
+          <td><input type="text" name="pass" value="$DBCONF[pass]"></td>
         </tr>
         <tr>
           <td>DB 이름</td>
-          <td><input type="text" name="database" value="$dbConfig[database]" required></td>
+          <td><input type="text" name="database" value="$DBCONF[database]" required></td>
         </tr>
       </table>
       <div class="buttons">

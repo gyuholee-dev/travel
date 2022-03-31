@@ -11,7 +11,7 @@ $content = ''; // 컨텐츠
 if ($USER && $ACT != 'login') {
     $active = ['db'=>'','table'=>'','data'=>''];
     $active[$ACT] = 'active';
-    $disabled = checkDB($DBCONF, false) ? '' : 'disabled';
+    $disabled = checkDB($DBCONF) ? '' : 'disabled';
     $header = <<<HTML
     <header>
       <nav class="menu">

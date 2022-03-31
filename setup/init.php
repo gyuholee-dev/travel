@@ -13,14 +13,16 @@ global $DBCONF;
 if (isset($_SESSION['key'])) {
   if ($_SESSION['key'] == $_COOKIE['key']) {
     $USER = $_SESSION['key'];
+    $ACT = 'db';
   } else {
     session_destroy();
     setcookie('key', '', time()-60);
+    $ACT = 'login';
   }
 }
 
 // 액션
-$ACT = isset($_GET['action'])?$_GET['action']:'login';
+$ACT = isset($_GET['action'])?$_GET['action']:$ACT;
 
 // 메시지
 $MSG = ['class' => '', 'log' => '']; 
