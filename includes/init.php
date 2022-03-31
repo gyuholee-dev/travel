@@ -20,6 +20,7 @@ $INFO = [
 ];
 
 // DB
+// TODO: DB 없이도 돌아가도록 오류 핸들링할것
 /* if ($_SERVER['HTTP_HOST']=='localhost') {
   // 서버가 로컬호스트일 경우 기본 DB 설정파일을 불러옴
   $dbConfig = json_decode(file_get_contents('configs/db.localhost.json'),true);
