@@ -1,11 +1,25 @@
 <?php // init.php
+// 함수
+require_once 'includes/functions.php';
 
-// 글로벌 변수
+// 로그
+global $MSG;
+
+// 사이트 정보
+global $INFO;
+
+// 환경변수
 global $DB;
 global $PAGE;
-global $TITLE;
+global $ACT;
+global $CODE;
+global $DO;
 
-// DB 환경변수
+// 로그
+$MSG = ['class'=>'', 'log'=>''];
+
+// DB
+// TODO: DB 없이도 돌아가도록 오류 핸들링할것
 if ($_SERVER['HTTP_HOST']=='localhost') {
   // 서버가 로컬호스트일 경우 기본 DB 설정파일을 불러옴
   $dbConfig = json_decode(file_get_contents('configs/db.localhost.json'),true);
@@ -13,8 +27,19 @@ if ($_SERVER['HTTP_HOST']=='localhost') {
   // 서버가 cafe24일 경우 cafe24 DB 설정파일을 불러옴
   $dbConfig = json_decode(file_get_contents('configs/db.cafe24.json'),true);
 }
-$host = $dbConfig['host'];
-$user = $dbConfig['user'];
-$pass = $dbConfig['pass'];
-$database = $dbConfig['database'];
-$DB = mysqli_connect($host, $user, $pass, $database);
+// DB 접속. 오류는 $MSG에 기록됨
+connectDB($dbConfig);
+
+/* 리퀘스트
+page: main, about, tour, contact, etc...
+action 액션: list, item...
+code: 상품코드
+do 실행: 
+  item&do=view
+          edit
+          delete
+*/
+$PAGE = isset($_REQUEST['page'])?$_REQUEST['page']:'top';
+$ACT = isset($_REQUEST['action'])?$_REQUEST['action']:'list';
+$DO = isset($_REQUEST['action'])?$_REQUEST['action']:'view';
+$CODE = isset($_REQUEST['code'])?$_REQUEST['code']:'00000000';
