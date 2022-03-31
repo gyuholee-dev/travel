@@ -71,12 +71,18 @@ header::after {content: "";
 .main-event-img img{width: 960px;height: auto;}
 .main-event-write{position: absolute;width: 560px;height: 400px;top: 50px;
     left: 200px;}
-.pp2{font-size: 3em;color: #1d021b;margin-bottom: 50px;}
+.pp2{font-size: 3em;color: #2a0528;margin-bottom: 50px;
+    text-shadow:  1px 3px 5px #7c7c7c;;}
 .pp3{font-size: 2em;color: #1d021b;}    
-.main-event-button{position: absolute;bottom: 50px; }
-.main-event-button[type=button]{background-color: #fff;padding: 30px;
-    border-radius: 15px;}
-
+.main-event-button{ width: 160px;height: 50px; left:400px;
+    position: absolute;bottom: 120px; }
+.main-event-button input[type=button]{border: 1px solid #fff;
+    padding: 15px; color: #fff; 
+    border: none;font-size: 1.2em; background-color: none;
+    border-radius: 25px;
+    }
+.main-event-button input[type=button]:hover{
+      font-weight: bold; font-size: 1.3em; }
 .helper{}
 .helper-cont{}
 .helper-cont>div a>img{}
