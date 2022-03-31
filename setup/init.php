@@ -11,7 +11,7 @@ global $DBCONF;
 
 // 로그인 체크
 if (isset($_SESSION['key'])) {
-  if ($_SESSION['key'] == $_COOKIE['key']) {
+  if (isset($_COOKIE['key']) && $_SESSION['key'] == $_COOKIE['key']) {
     $USER = $_SESSION['key'];
     $ACT = 'db';
   } else {
