@@ -1,22 +1,22 @@
-<?php // DB 검사 및 생성
+<?php // 로그인
 
-// 포스트 서브밋 처리
+// 로그인 처리
 if (isset($_POST['confirm'])) {
-  $dbConfig = [
-    'host' => $_POST['host'],
-    'user' => $_POST['user'],
-    'pass' => $_POST['pass'],
-    'database' => $_POST['database'],
-  ];
+  $DBCONF['user'] = $_POST['user'];
+  $DBCONF['pass'] = $_POST['pass'];
 
-  if ($_POST['confirm']=='DB생성') { // DB생성
-    createDB($dbConfig);
-    makeDBConfig($configFile, $dbConfig, false);
-  } elseif ($_POST['confirm']=='테스트') { // 테스트
-    checkDB($dbConfig);
-  } elseif ($_POST['confirm']=='세이브') { // 설정파일 저장
-    makeDBConfig($configFile, $dbConfig);
-    // header('Location: setup.php');
+  if (loginDB($DBCONF) == true) { // 로그인 성공
+    $_SESSION['key'] = time().md5($DBCONF['user']);
+    setcookie('key', $_SESSION['key'], time()+3600);
+    makeDBConfig($DBCONF);
+
+    // $MSG['log'] = '로그인 성공';
+    // $MSG['class'] = 'green';
+    header('Location: setup.php?action=db');
+  
+  } else { // 로그인 실패
+    $MSG['log'] = '로그인 실패';
+    $MSG['class'] = 'red';
   }
 }
 
@@ -26,20 +26,16 @@ $content .= <<<HTML
     <form method="post" action="">
       <table>
         <tr>
-          <td>호스트</td>
-          <td><input type="text" name="host" value="$dbConfig[host]" readonly required></td>
-        </tr>
-        <tr>
           <td>사용자</td>
-          <td><input type="text" name="user" value="$dbConfig[user]" required></td>
+          <td><input type="text" name="user" value="$DBCONF[user]" required></td>
         </tr>
         <tr>
           <td>비밀번호</td>
-          <td><input type="text" name="pass" value="$dbConfig[pass]"></td>
+          <td><input type="password" name="pass" value="$DBCONF[pass]"></td>
         </tr>
       </table>
       <div class="buttons">
-        <input class="btn" type="submit" value="로그인">
+        <input class="btn" type="submit" name="confirm" value="로그인">
         <input class="btn" type="submit" value="취소">
       </div>
     </form>

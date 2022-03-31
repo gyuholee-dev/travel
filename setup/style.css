@@ -127,6 +127,10 @@ section.setup {
   background-color: white;
 }
 
+section.setup.login {
+  margin-top: 70px;
+}
+
 section.setup .title {
   font-size: 20px;
   font-weight: bold;

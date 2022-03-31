@@ -1,7 +1,31 @@
 <?php // 셋업 함수
 
+// 로그인
+function loginDB($dbConfig, $log=false) {
+  global $DB;
+  global $MSG;
+  foreach ($dbConfig as $key => $value) {
+    $$key = $value;
+  }
+  try {
+    $DB = mysqli_connect('localhost', $user, $pass);
+    if ($log) {
+      $msg['class'] = 'green';
+      $msg['log'] = '로그인 성공';
+    }
+    return true;
+  } catch (Exception $e) {
+    if ($log) {
+      $msg['class'] = 'red';
+      $msg['log'] = '로그인 실패: '.$e->getMessage();
+    }
+    return false;
+  }
+}
+
+
 // DB 접속 검사
-function checkDB($dbConfig, $log=true) {
+function selectDB($dbConfig, $log=true) {
   global $msg;
   foreach ($dbConfig as $key => $value) {
     $$key = $value;
@@ -47,9 +71,9 @@ function createDB($dbConfig, $log=true) {
 }
 
 // DB 설정파일 생성
-function makeDBConfig($configFile, $dbConfig, $log=true) {
+function makeDBConfig($dbConfig, $log=false) {
   global $msg;
-  $file = fopen('configs/'.$configFile, 'w');
+  $file = fopen('configs/'.$dbConfig['file'], 'w');
   $dbConfig = json_encode($dbConfig);
   fwrite($file, $dbConfig);
   fclose($file);
