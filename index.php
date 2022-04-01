@@ -9,6 +9,7 @@
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src="javascript/script.js" defer="defer"></script>
         <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+        <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-pen.css" rel="stylesheet">
      </head>
     <body>
         <header>   
@@ -68,18 +69,18 @@
             </div>
 
           </div><!-- main-event -->
-          <div class="helper">여행 도우미</div><!-- helper -->
+          <div class="helper"><p>여행 도우미</p></div><!-- helper -->
           <div class="helper-cont">
             <div><a href="#">
-              <img src="">
+              <img src="images/icons/ig4.png" class="ig4">
               <p>FAQ</p></a>
             </div>
             <div><a href="#">
-              <img src="">
+              <img src="images/icons/ig1.png">
               <p>1:1 고객센터</p></a>
             </div>
             <div><a href="#">
-              <img src="">
+              <img src="images/icons/ig2.png">
               <p>확인/변경</p></a>
             </div>
           </div><!-- helper-cont -->
@@ -89,17 +90,18 @@
           <div class="promotion-cont">
             <div class="promo-left">
               <a href="#">
-                <img src="images/">
-                <p>설명내용추가</p>
+                <img src="images/pictures/promotion.jpg">
+                <p>설명내용추가 설명내용추가 설명내용</p>
               </a>
             </div>
             <div class="promo-right">
               <a href="#">
-                <img src="images/">
+                <img src="images/pictures/main1.jpg">
+                <div class="p-box1"></div>
                 <div>
                 <p>설명내용추가</p>
-                <p>타이틀</p>
-                <p>설명내용추가</p>
+                <p style="font-weight: bold;font-size: 1.2em;">타이틀</p>
+                <p>설명내용추가 설명내용추가</p>
                 </div>
               </a>
             </div>
@@ -108,98 +110,125 @@
               <p>블라썸 투어의 테마여행</p>
             </div><!-- theme -->
           <div class="theme-cont">
-            <div class="theme-icons">
+          <div class="theme-icons">
               <div class="t-icon">
-                <img src="images/">
-                <P>역사·문화</P>
+              <div class="t-img1">
+                <img src="images/icons/histroy.png" class="history"></div>
+                <P class="history">역사·문화</P>
               </div>
               <div class="t-icon">
-                <img src="images/">
-                <P>시티라이프</P>
+              <div class="t-img1">
+                <img src="images/icons/bilding.png" class="building"></div>
+                <P class="building">시티라이프</P>
               </div>
               <div class="t-icon">
-                <img src="images/">
-                <P>산꼴라이프</P>
+              <div class="t-img1">
+                <img src="images/icons/house.png" class="house"></div>
+                <P class="house">산꼴라이프</P>
               </div>
             </div><!-- theme-icons -->
+            <div class="theme-imgs">
             <div class="theme-imgs1">
-              <div class="t-images"><a href="#">
-                <img src="images/">
+              <div class="fake">
+              <div class="t-images">
+                <a href="#">
+                <div class="t-img">  
+                <img src="images/pictures/history1.jpg"></div>
                 <p>여기에 타이틀 내용적어주세요</p>
                 <p>500,000원 부터~</p>
-                <p class="hash">자연</p>
-                <p class="hash">경치</p>
-                <p class="hash">나무</p>
+                <p class="hash">#자연&nbsp;</p>
+                <p class="hash">#경치&nbsp;</p>
+                <p class="hash">#나무&nbsp;</p>
               </a></div>
-              <div class="t-images"><a href="#">
-                <img src="images/">
+              <div class="t-images">
+                <a href="#">
+                <div class="t-img">  
+                <img src="images/pictures/history2.jpg"></div>
                 <p>여기에 타이틀 내용적어주세요</p>
                 <p>500,000원 부터~</p>
-                <p class="hash">자연</p>
-                <p class="hash">경치</p>
-                <p class="hash">나무</p>
+                <p class="hash">#자연&nbsp;</p>
+                <p class="hash">#경치&nbsp;</p>
+                <p class="hash">#나무&nbsp;</p>
               </a></div>
-              <div class="t-images"><a href="#">
-                <img src="images/">
+              <div class="t-images">
+                <a href="#">
+                <div class="t-img">  
+                <img src="images/pictures/history3.jpg"></div>
                 <p>여기에 타이틀 내용적어주세요</p>
                 <p>500,000원 부터~</p>
-                <p class="hash">자연</p>
-                <p class="hash">경치</p>
-                <p class="hash">나무</p>
+                <p class="hash">#자연&nbsp;</p>
+                <p class="hash">#경치&nbsp;</p>
+                <p class="hash">#나무&nbsp;</p>
               </a></div>
+              </div>
             </div><!-- theme-imgs1 -->
             <div class="theme-imgs2">
+            <div class="fake">
+            <div class="t-images">
+                <a href="#">
+                <div class="t-img">  
+                <img src="images/pictures/building1.jpg"></div>
+                <p>여기에 타이틀 내용적어주세요</p>
+                <p>500,000원 부터~</p>
+                <p class="hash">#자연&nbsp;</p>
+                <p class="hash">#경치&nbsp;</p>
+                <p class="hash">#나무&nbsp;</p>
+              </a></div>
               <div class="t-images">
-                <img src="images/">
+                <a href="#">
+                <div class="t-img">  
+                <img src="images/pictures/building2.jpg"></div>
                 <p>여기에 타이틀 내용적어주세요</p>
                 <p>500,000원 부터~</p>
-                <p class="hash">자연</p>
-                <p class="hash">경치</p>
-                <p class="hash">나무</p>
+                <p class="hash">#자연&nbsp;</p>
+                <p class="hash">#경치&nbsp;</p>
+                <p class="hash">#나무&nbsp;</p>
               </a></div>
-              <div class="t-images"><a href="#">
-                <img src="images/">
+              <div class="t-images">
+                <a href="#">
+                <div class="t-img">  
+                <img src="images/pictures/building3.jpg"></div>
                 <p>여기에 타이틀 내용적어주세요</p>
                 <p>500,000원 부터~</p>
-                <p class="hash">자연</p>
-                <p class="hash">경치</p>
-                <p class="hash">나무</p>
-              </a></div>
-              <div class="t-images"><a href="#">
-                <img src="images/">
-                <p>여기에 타이틀 내용적어주세요</p>
-                <p>500,000원 부터~</p>
-                <p class="hash">자연</p>
-                <p class="hash">경치</p>
-                <p class="hash">나무</p>
-              </a></div>
+                <p class="hash">#자연&nbsp;</p>
+                <p class="hash">#경치&nbsp;</p>
+                <p class="hash">#나무&nbsp;</p>
+              </a></div></div>
             </div><!-- theme-imgs2 -->
             <div class="theme-imgs3">
+            <div class="fake">
+            <div class="t-images">
+                <a href="#">
+                <div class="t-img">  
+                <img src="images/pictures/house1.jpg"></div>
+                <p>여기에 타이틀 내용적어주세요</p>
+                <p>500,000원 부터~</p>
+                <p class="hash">#자연&nbsp;</p>
+                <p class="hash">#경치&nbsp;</p>
+                <p class="hash">#나무&nbsp;</p>
+              </a></div>
               <div class="t-images">
-                <img src="images/">
+                <a href="#">
+                <div class="t-img">  
+                <img src="images/pictures/house2.jpg"></div>
                 <p>여기에 타이틀 내용적어주세요</p>
                 <p>500,000원 부터~</p>
-                <p class="hash">자연</p>
-                <p class="hash">경치</p>
-                <p class="hash">나무</p>
+                <p class="hash">#자연&nbsp;</p>
+                <p class="hash">#경치&nbsp;</p>
+                <p class="hash">#나무&nbsp;</p>
               </a></div>
-              <div class="t-images"><a href="#">
-                <img src="images/">
+              <div class="t-images">
+                <a href="#">
+                <div class="t-img">  
+                <img src="images/pictures/house3.jpg"></div>
                 <p>여기에 타이틀 내용적어주세요</p>
                 <p>500,000원 부터~</p>
-                <p class="hash">자연</p>
-                <p class="hash">경치</p>
-                <p class="hash">나무</p>
-              </a></div>
-              <div class="t-images"><a href="#">
-                <img src="images/">
-                <p>여기에 타이틀 내용적어주세요</p>
-                <p>500,000원 부터~</p>
-                <p class="hash">자연</p>
-                <p class="hash">경치</p>
-                <p class="hash">나무</p>
-              </a></div>
+                <p class="hash">#자연&nbsp;</p>
+                <p class="hash">#경치&nbsp;</p>
+                <p class="hash">#나무&nbsp;</p>
+              </a></div></div>
             </div><!-- theme-imgs3 -->
+            </div><!-- theme-imgs -->
           </div><!-- theme-cont -->
         </section>
         </div> <!-- bodycolor -->
