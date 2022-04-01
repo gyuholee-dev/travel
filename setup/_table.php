@@ -7,8 +7,8 @@ connectDB($DBCONF, false);
 $drop = true;
 $tables = [
   'item' => 'item',
-  'user' => 'user',
-  'order' => 'order',
+  'member' => 'member',
+  'booking' => 'booking',
   'board' => 'board',
 ];
 
@@ -17,15 +17,19 @@ if (isset($_POST['confirm'])) {
   $drop = isset($_POST['drop']) ? true : false;
   $tables = [
     'item' => $_POST['item'],
-    'user' => $_POST['user'],
-    'order' => $_POST['order'],
+    'member' => $_POST['member'],
+    'booking' => $_POST['booking'],
     'board' => $_POST['board'],
   ];
 
   if ($_POST['confirm']=='생성') { // DB생성
-    // createTable($tables, $drop);
+    foreach ($tables as $key => $table) {
+      createTable($table, $drop, true);
+    }
   } elseif ($_POST['confirm']=='테스트') { // 테스트
-    // checkTable($tables);
+    foreach ($tables as $key => $table) {
+      checkTable($table, true);
+    }
   }
 }
 
@@ -41,12 +45,12 @@ $content .= <<<HTML
           <td><input type="text" name="item" value="$tables[item]" readonly></td>
         </tr>
         <tr>
-          <td>주문</td>
-          <td><input type="text" name="order" value="$tables[order]" readonly></td>
+          <td>회원</td>
+          <td><input type="text" name="member" value="$tables[member]" readonly></td>
         </tr>
         <tr>
-          <td>회원</td>
-          <td><input type="text" name="user" value="$tables[user]" readonly></td>
+          <td>주문</td>
+          <td><input type="text" name="booking" value="$tables[booking]" readonly></td>
         </tr>
         <tr>
           <td>게시판</td>
