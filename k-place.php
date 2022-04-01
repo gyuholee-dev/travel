@@ -38,13 +38,13 @@
         </header>
         <div id="bodycolor">
         <section id="content">   
-          <div class="search">
-            <div class="search-box">
+          <div class="search" style="height: 320px;">
+            <div class="search-box" style="width: 800px; height: 320px;">
             <div class="search-top">
-              <p class="pp1"><a href="#">국내투어</a></p>
+              <p class="pp1" style="color: #F26E62;"><a href="#">국내투어</a></p>
               <p class="pp1"><a href="#">해외투어</a></p>
             </div><!-- search-top -->
-            <div class="search-bottom">
+            <div class="search-bottom" style="height: 100px;">
               <form name="frm1" method="post" action="search_ok.php">
                 <br><br>
                 <table class="table1">
@@ -56,81 +56,63 @@
                 </table><br><br>   
           </form>
             </div><!-- search-bottom -->
+            <div class="location">
+                <ul>
+                    <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;서울 </a></li>
+                   <li><a href="#">영등포 </a></li>
+                   <li><a href="#">홍대입구 </a></li>
+                   <li><a href="#">압구정 </a></li>
+                   <li><a href="#">연신내 </a></li>
+                   <li><a href="#">석촌 </a></li>
+                   <li><a href="#">신도림 </a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">경기도 </a></li>
+                   <li><a href="#">영등포 </a></li>
+                   <li><a href="#">홍대입구 </a></li>
+                   <li><a href="#">압구정 </a></li>
+                   <li><a href="#">연신내 </a></li>
+                   <li><a href="#">석촌 </a></li>
+                   <li><a href="#">신도림 </a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">경상도 </a></li>
+                   <li><a href="#">영등포 </a></li>
+                   <li><a href="#">홍대입구 </a></li>
+                   <li><a href="#">압구정 </a></li>
+                   <li><a href="#">연신내 </a></li>
+                   <li><a href="#">석촌 </a></li>
+                   <li><a href="#">신도림 </a></li>
+                   <li><a href="#">부산 </a></li>
+                   <li><a href="#">대구 </a></li>
+                   <li><a href="#">김해</a> </a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">전라도 </a></li>
+                   <li><a href="#">영등포 </a></li>
+                   <li><a href="#">홍대입구 </a></li>
+                   <li><a href="#">압구정 </a></li>
+                   <li><a href="#">연신내 </a></li>
+                   <li><a href="#">석촌 </a></li>
+                   <li><a href="#">신도림 </a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">강원도 </a></li>
+                   <li><a href="#">영등포 </a></li>
+                   <li><a href="#">홍대입구 </a></li>
+                   <li><a href="#">압구정 </a></li>
+                   <li><a href="#">연신내 </a></li>
+                   <li><a href="#">석촌 </a></li>
+                   <li><a href="#">신도림 </a></li>
+                </ul>
+            </div>
           </div><!-- search-box -->
           </div><!-- search -->
-          <div class="main-event">
-            <div class="main-event-img"><img src="images/pictures/main3.jpg"></div>
-            <div class="main-event-write">
-              <p class="pp2">리워드를 통한 확인</p>
-              <p class="pp3">블라썸투어의 야침한 이벤트 여기서 확인하세요</p>
-            </div>
-            <div class="main-event-button">
-              <input type="button" value="확인하기" class="bt" onclick="location.href='#'">
-            </div>
-
-          </div><!-- main-event -->
-          <div class="helper"><p>여행 도우미</p></div><!-- helper -->
-          <div class="helper-cont">
-            <div><a href="#">
-              <img src="images/icons/ig4.png" class="ig4">
-              <p>FAQ</p></a>
-            </div>
-            <div><a href="#">
-              <img src="images/icons/ig1.png">
-              <p>1:1 고객센터</p></a>
-            </div>
-            <div><a href="#">
-              <img src="images/icons/ig2.png">
-              <p>확인/변경</p></a>
-            </div>
-          </div><!-- helper-cont -->
-          <div class="promotion">
-            <p>이달의 프로모션</p>
-          </div><!-- promotion -->
-          <div class="promotion-cont">
-            <div class="promo-left">
-              <a href="#">
-                <img src="images/pictures/promotion.jpg">
-                <p>설명내용추가 설명내용추가 설명내용</p>
-              </a>
-            </div>
-            <div class="promo-right">
-              <a href="#">
-                <img src="images/pictures/main1.jpg">
-                <div class="p-box1"></div>
-                <div>
-                <p>설명내용추가</p>
-                <p style="font-weight: bold;font-size: 1.2em;">타이틀</p>
-                <p>설명내용추가 설명내용추가</p>
-                </div>
-              </a>
-            </div>
-          </div><!-- promotion-cont -->
-          <div class="theme">
-              <p>블라썸 투어의 테마여행</p>
-            </div><!-- theme -->
-          <div class="theme-cont">
-          <div class="theme-icons">
-              <div class="t-icon">
-              <div class="t-img1">
-                <img src="images/icons/histroy.png" class="history"></div>
-                <P class="history">역사·문화</P>
-              </div>
-              <div class="t-icon">
-              <div class="t-img1">
-                <img src="images/icons/bilding.png" class="building"></div>
-                <P class="building">시티라이프</P>
-              </div>
-              <div class="t-icon">
-              <div class="t-img1">
-                <img src="images/icons/house.png" ></div>
-                <P class="house">산꼴라이프</P>
-              </div>
-            </div><!-- theme-icons -->
-            <div class="theme-imgs">
-            <div class="theme-imgs1">
-              <div class="fake">
-              <div class="t-images">
+          <div class="clear"></div>
+          <div class="k-product"><p>국내투어 모든상품</p>
+          </div><!-- k-product -->
+          <div class="k-product-cont">
+              <div class="t-images1">
                 <a href="#">
                 <div class="t-img">  
                 <img src="images/pictures/history1.jpg"></div>
@@ -140,7 +122,7 @@
                 <p class="hash">#경치&nbsp;</p>
                 <p class="hash">#나무&nbsp;</p>
               </a></div>
-              <div class="t-images">
+              <div class="t-images1">
                 <a href="#">
                 <div class="t-img">  
                 <img src="images/pictures/history2.jpg"></div>
@@ -150,7 +132,7 @@
                 <p class="hash">#경치&nbsp;</p>
                 <p class="hash">#나무&nbsp;</p>
               </a></div>
-              <div class="t-images">
+              <div class="t-images1">
                 <a href="#">
                 <div class="t-img">  
                 <img src="images/pictures/history3.jpg"></div>
@@ -159,12 +141,9 @@
                 <p class="hash">#자연&nbsp;</p>
                 <p class="hash">#경치&nbsp;</p>
                 <p class="hash">#나무&nbsp;</p>
-              </a></div>
+              </a>
               </div>
-            </div><!-- theme-imgs1 -->
-            <div class="theme-imgs2">
-            <div class="fake">
-            <div class="t-images">
+              <div class="t-images1">
                 <a href="#">
                 <div class="t-img">  
                 <img src="images/pictures/building1.jpg"></div>
@@ -174,7 +153,7 @@
                 <p class="hash">#경치&nbsp;</p>
                 <p class="hash">#나무&nbsp;</p>
               </a></div>
-              <div class="t-images">
+              <div class="t-images1">
                 <a href="#">
                 <div class="t-img">  
                 <img src="images/pictures/building2.jpg"></div>
@@ -184,7 +163,7 @@
                 <p class="hash">#경치&nbsp;</p>
                 <p class="hash">#나무&nbsp;</p>
               </a></div>
-              <div class="t-images">
+              <div class="t-images1">
                 <a href="#">
                 <div class="t-img">  
                 <img src="images/pictures/building3.jpg"></div>
@@ -193,11 +172,8 @@
                 <p class="hash">#자연&nbsp;</p>
                 <p class="hash">#경치&nbsp;</p>
                 <p class="hash">#나무&nbsp;</p>
-              </a></div></div>
-            </div><!-- theme-imgs2 -->
-            <div class="theme-imgs3">
-            <div class="fake">
-            <div class="t-images">
+              </a></div>
+              <div class="t-images1">
                 <a href="#">
                 <div class="t-img">  
                 <img src="images/pictures/house1.jpg"></div>
@@ -207,7 +183,7 @@
                 <p class="hash">#경치&nbsp;</p>
                 <p class="hash">#나무&nbsp;</p>
               </a></div>
-              <div class="t-images">
+              <div class="t-images1">
                 <a href="#">
                 <div class="t-img">  
                 <img src="images/pictures/house2.jpg"></div>
@@ -217,7 +193,7 @@
                 <p class="hash">#경치&nbsp;</p>
                 <p class="hash">#나무&nbsp;</p>
               </a></div>
-              <div class="t-images">
+              <div class="t-images1">
                 <a href="#">
                 <div class="t-img">  
                 <img src="images/pictures/house3.jpg"></div>
@@ -226,10 +202,14 @@
                 <p class="hash">#자연&nbsp;</p>
                 <p class="hash">#경치&nbsp;</p>
                 <p class="hash">#나무&nbsp;</p>
-              </a></div></div>
-            </div><!-- theme-imgs3 -->
-            </div><!-- theme-imgs -->
-          </div><!-- theme-cont -->
+              </a></div>
+            </div><!-- k-product-cont -->
+            <div class="clear"></div>
+            <div class="morebox">
+            <div class="more1">
+                <a href="#"><p>더보기</p></a>
+            </div></div>
+        
         </section>
         </div> <!-- bodycolor -->
         <div class="clear"></div>
