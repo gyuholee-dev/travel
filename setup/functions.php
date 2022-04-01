@@ -1,30 +1,83 @@
 <?php // 셋업 함수
 
-// DB 접속 검사
-function checkDB($dbConfig, $log=true) {
-  global $msg;
+// DB 로그인
+function loginDB($dbConfig, $log=false) {
+  global $DB;
+  global $MSG;
   foreach ($dbConfig as $key => $value) {
     $$key = $value;
   }
   try {
-    mysqli_connect($host, $user, $pass, $database);
+    $DB = mysqli_connect('localhost', $user, $pass);
     if ($log) {
-      $msg['class'] = 'green';
-      $msg['log'] = 'DB 접속 성공';
+      $MSG['class'] = 'green';
+      $MSG['log'] = '로그인 성공';
     }
     return true;
   } catch (Exception $e) {
     if ($log) {
-      $msg['class'] = 'red';
-      $msg['log'] = 'DB 접속 실패: '.$e->getMessage();
+      $MSG['class'] = 'red';
+      $MSG['log'] = '로그인 실패: '.$e->getMessage();
     }
     return false;
   }
 }
 
+// DB 셀렉트
+function selectDB($dbConfig, $log=false) {
+  global $DB;
+  global $MSG;
+  foreach ($dbConfig as $key => $value) {
+    $$key = $value;
+  }
+  try {
+    $DB = mysqli_select_db($DB, $database);
+    if ($log) {
+      $MSG['class'] = 'green';
+      $MSG['log'] = 'DB 선택 성공';
+    }
+    return true;
+  } catch (Exception $e) {
+    if ($log) {
+      $MSG['class'] = 'red';
+      $MSG['log'] = 'DB 선택 실패: '.$e->getMessage();
+    }
+    return false;
+  }
+}
+
+
+// DB 접속 검사
+function checkDB($dbConfig, $log=false) {
+  global $DB;
+  global $MSG;
+  foreach ($dbConfig as $key => $value) {
+    $$key = $value;
+  }
+  try {
+    $DB = mysqli_connect($host, $user, $pass, $database);
+    if ($log) {
+      $MSG['class'] = 'green';
+      $MSG['log'] = 'DB 접속 성공';
+    }
+    return true;
+  } catch (Exception $e) {
+    if ($log) {
+      $MSG['class'] = 'red';
+      $MSG['log'] = 'DB 접속 실패: '.$e->getMessage();
+    }
+    return false;
+  }
+}
+
+// DB 접속
+function connectDB($dbConfig, $log=false) {
+  return checkDB($dbConfig, $log);
+}
+
 // DB 생성
 function createDB($dbConfig, $log=true) {
-  global $msg;
+  global $MSG;
   foreach ($dbConfig as $key => $value) {
     $$key = $value;
   }
@@ -33,35 +86,40 @@ function createDB($dbConfig, $log=true) {
     $sql = "CREATE DATABASE $database";
     mysqli_query($db, $sql);
     if ($log) {
-      $msg['class'] = 'green';
-      $msg['log'] = 'DB 생성 성공';
+      $MSG['class'] = 'green';
+      $MSG['log'] = 'DB 생성 성공';
     }
     return true;
   } catch (Exception $e) {
     if ($log) {
-      $msg['class'] = 'red';
-      $msg['log'] = 'DB 생성 실패: '.$e->getMessage();
+      $MSG['class'] = 'red';
+      $MSG['log'] = 'DB 생성 실패: '.$e->getMessage();
     }
     return false;
   }
 }
 
 // DB 설정파일 생성
-function makeDBConfig($configFile, $dbConfig, $log=true) {
-  global $msg;
-  $file = fopen('configs/'.$configFile, 'w');
+function makeDBConfig($dbConfig, $log=false) {
+  global $MSG;
+  $file = fopen('configs/'.$dbConfig['file'], 'w');
   $dbConfig = json_encode($dbConfig);
-  fwrite($file, $dbConfig);
-  fclose($file);
+  $write = fwrite($file, $dbConfig);
   if ($log) {
-    $msg['class'] = 'green';
-    $msg['log'] = '설정파일 저장됨';
+    if ($write !== false) {
+        $MSG['class'] = 'green';
+        $MSG['log'] = '설정파일 저장됨';
+    } else {
+      $MSG['class'] = 'red';
+      $MSG['log'] = '설정파일 저장 실패';
+    }
   }
+  fclose($file);
 }
 
 function createTable($tables, $drop=false) {
   global $DB;
-  global $msg;
+  global $MSG;
 
   foreach ($tables as $key => $table) {
     if ($drop) {
@@ -81,14 +139,14 @@ function createTable($tables, $drop=false) {
 
 function checkTable($tables) {
   global $DB;
-  global $msg;
+  global $MSG;
 
   foreach ($tables as $key => $table) {
     $sql = "SHOW TABLES LIKE '$table'";
     $result = mysqli_query($DB, $sql);
     if (mysqli_num_rows($result) == 0) {
-      $msg['class'] = 'red';
-      $msg['log'] = '테이블 없음';
+      $MSG['class'] = 'red';
+      $MSG['log'] = '테이블 없음';
       return false;
     }
   }

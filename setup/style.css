@@ -122,43 +122,56 @@ section {
   border-radius: 10px;
 }
 
-section.setup {
+section {
   margin-top: 30px;
   background-color: white;
 }
 
-section.setup .title {
+section.login {
+  margin-top: 70px;
+}
+
+section .title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-section.setup table {
+section .title.red {
+  color: red;
+}
+
+section .box p {
+  padding: 0 5px;
+  margin-bottom: 10px;
+}
+
+section table {
   margin-bottom: 15px;
 }
 
-section.setup table th, section.setup table td {
+section table th, section table td {
   padding: 2px 5px;
 }
 
-section.setup table input {
+section table input {
   min-width: 200px;
   padding: 3px;
   border: 1px solid #808080;
   border-radius: 3px;
 }
 
-section.setup table input[readonly] {
+section table input[readonly] {
   background-color: #eee;
 }
 
-section.setup .buttons {
+section .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-section.setup .buttons > *:not(:last-child) {
+section .buttons > *:not(:last-child) {
   margin-right: 10px;
 }
 

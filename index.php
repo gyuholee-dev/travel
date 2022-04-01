@@ -35,6 +35,7 @@
           </div><!-- right -->
         </div><!-- top -->
         </header>
+        <div id="bodycolor">
         <section id="content">   
           <div class="search">
             <div class="search-box">
@@ -47,7 +48,8 @@
                 <br><br>
                 <table class="table1">
                     <tr>
-                       <td><input type="text" name="place" value="목적지를 검색하세요"></td>
+                       <td><input type="text" name="place" 
+                       placeholder="목적지를 검색하세요.">&nbsp;&nbsp;&nbsp;</td>
                        <td><input type="button" value="search" class="bt" onclick="send()"></td>
                     </tr>
                 </table><br><br>   
@@ -56,13 +58,13 @@
           </div><!-- search-box -->
           </div><!-- search -->
           <div class="main-event">
-            <div class="main-event-img"><img src=""></div>
+            <div class="main-event-img"><img src="images/pictures/main3.jpg"></div>
             <div class="main-event-write">
-              <p>리워드를 통한 확인</p>
-              <p>블라썸투어의 야침한 이벤트 여기서 확인하세요</p>
+              <p class="pp2">리워드를 통한 확인</p>
+              <p class="pp3">블라썸투어의 야침한 이벤트 여기서 확인하세요</p>
             </div>
             <div class="main-event-button">
-              <input type="button" value="search" class="bt" onclick="location.href='#'">
+              <input type="button" value="확인하기" class="bt" onclick="location.href='#'">
             </div>
 
           </div><!-- main-event -->
@@ -200,6 +202,7 @@
             </div><!-- theme-imgs3 -->
           </div><!-- theme-cont -->
         </section>
+        </div> <!-- bodycolor -->
         <div class="clear"></div>
         <footer>
           <div class="policy">
