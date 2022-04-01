@@ -4,6 +4,10 @@
 if (isset($_POST['confirm'])) {
   $DBCONF['user'] = $_POST['user'];
   $DBCONF['pass'] = $_POST['pass'];
+  // host, user 조건에 따라 db명을 미리 정함
+  if ($_SERVER['HTTP_HOST'] != 'localhost' || $DBCONF['user'] != 'root') {
+    $DBCONF['database'] = $_POST['user'];
+  }
 
   if (loginDB($DBCONF) == true) { // 로그인 성공
     $_SESSION['key'] = time().md5($DBCONF['user']);

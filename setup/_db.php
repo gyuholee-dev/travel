@@ -1,7 +1,6 @@
 <?php // DB 검사 및 생성
 
 // 포스트 서브밋 처리
-// TODO: 호스트, 사용자 등 조건에 따라 미리 DB명도 저장
 if (isset($_POST['confirm'])) {
   $DBCONF['host'] = $_POST['host'];
   $DBCONF['user'] = $_POST['user'];
@@ -19,7 +18,14 @@ if (isset($_POST['confirm'])) {
   }
 }
 
-// TODO: host, user 조건에 따라 사용자 db 이름 및 생성을 readonly 처리
+// host, user 조건에 따라 사용자 db 이름 및 생성을 readonly 처리
+$readonly = '';
+$disabled = '';
+if ($_SERVER['HTTP_HOST'] != 'localhost' || $DBCONF['user'] != 'root') {
+  $readonly = 'readonly';
+  $disabled = 'disabled';
+}
+
 $content .= <<<HTML
   <section class="setup">
     <div class="title">MariaDB 설정</div>
@@ -39,13 +45,13 @@ $content .= <<<HTML
         </tr>
         <tr>
           <td>DB 이름</td>
-          <td><input type="text" name="database" value="$DBCONF[database]" required></td>
+          <td><input type="text" name="database" value="$DBCONF[database]" required $readonly></td>
         </tr>
       </table>
       <div class="buttons">
-        <input class="btn" type="submit" name="confirm" value="DB생성">
+        <input class="btn" type="submit" name="confirm" value="DB생성" $disabled>
         <input class="btn" type="submit" name="confirm" value="테스트">
-        <input class="btn" type="submit" name="confirm" value="세이브">
+        <input class="btn" type="submit" name="confirm" value="설정저장">
       </div>
     </form>
   </section>
