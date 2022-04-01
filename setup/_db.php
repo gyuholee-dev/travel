@@ -12,7 +12,7 @@ if (isset($_POST['confirm'])) {
     makeDBConfig($DBCONF, false);
   } elseif ($_POST['confirm']=='테스트') { // 테스트
     checkDB($DBCONF, true);
-  } elseif ($_POST['confirm']=='세이브') { // 설정파일 저장
+  } elseif ($_POST['confirm']=='설정저장') { // 설정파일 저장
     makeDBConfig($DBCONF, true);
     // header('Location: setup.php');
   }

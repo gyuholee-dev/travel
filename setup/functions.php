@@ -99,12 +99,17 @@ function makeDBConfig($dbConfig, $log=false) {
   global $MSG;
   $file = fopen('configs/'.$dbConfig['file'], 'w');
   $dbConfig = json_encode($dbConfig);
-  fwrite($file, $dbConfig);
-  fclose($file);
+  $write = fwrite($file, $dbConfig);
   if ($log) {
-    $MSG['class'] = 'green';
-    $MSG['log'] = '설정파일 저장됨';
+    if ($write !== false) {
+        $MSG['class'] = 'green';
+        $MSG['log'] = '설정파일 저장됨';
+    } else {
+      $MSG['class'] = 'red';
+      $MSG['log'] = '설정파일 저장 실패';
+    }
   }
+  fclose($file);
 }
 
 function createTable($tables, $drop=false) {

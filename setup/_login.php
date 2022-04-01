@@ -44,4 +44,16 @@ $content .= <<<HTML
       </div>
     </form>
   </section>
+
+  <section class="comment">
+    <div class="title red">주의!</div>
+    <div class="box">
+      <p><b>
+        cafe24 서버일 경우<br>
+        configs 디렉토리 권한 755 필요.<br>
+        ssh 또는 파일질라에서 설정해 주세요.
+      </b></p>
+      <img src="setup/permission.png">
+    </div>
+  </section>
 HTML;
