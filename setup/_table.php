@@ -1,14 +1,10 @@
 <?php // 테이블 검사 및 생성
 
-global $DB;
-
 // DB 접속 
-foreach ($dbConfig as $key => $value) {
-  $$key = $value;
-}
-$DB = mysqli_connect($host, $user, $pass, $database);
+connectDB($DBCONF, false);
 
 // 테이블 기본값
+$drop = true;
 $tables = [
   'item' => 'item',
   'user' => 'user',
@@ -27,11 +23,13 @@ if (isset($_POST['confirm'])) {
   ];
 
   if ($_POST['confirm']=='생성') { // DB생성
-    createTable($tables, $drop);
+    // createTable($tables, $drop);
   } elseif ($_POST['confirm']=='테스트') { // 테스트
-    checkTable($tables);
+    // checkTable($tables);
   }
 }
+
+$checked = $drop ? 'checked' : '';
 
 $content .= <<<HTML
   <section class="setup">
@@ -56,7 +54,7 @@ $content .= <<<HTML
         </tr>
       </table>
       <div class="buttons">
-        <label><input type="checkbox" name="drop">드랍</label>
+        <label><input type="checkbox" name="drop" $checked>드랍</label>
         <input class="btn" type="submit" name="confirm" value="생성">
         <input class="btn" type="submit" name="confirm" value="테스트">
       </div>

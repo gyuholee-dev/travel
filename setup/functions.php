@@ -70,6 +70,11 @@ function checkDB($dbConfig, $log=false) {
   }
 }
 
+// DB 접속
+function connectDB($dbConfig, $log=false) {
+  return checkDB($dbConfig, $log);
+}
+
 // DB 생성
 function createDB($dbConfig, $log=true) {
   global $MSG;
@@ -99,12 +104,17 @@ function makeDBConfig($dbConfig, $log=false) {
   global $MSG;
   $file = fopen('configs/'.$dbConfig['file'], 'w');
   $dbConfig = json_encode($dbConfig);
-  fwrite($file, $dbConfig);
-  fclose($file);
+  $write = fwrite($file, $dbConfig);
   if ($log) {
-    $MSG['class'] = 'green';
-    $MSG['log'] = '설정파일 저장됨';
+    if ($write !== false) {
+        $MSG['class'] = 'green';
+        $MSG['log'] = '설정파일 저장됨';
+    } else {
+      $MSG['class'] = 'red';
+      $MSG['log'] = '설정파일 저장 실패';
+    }
   }
+  fclose($file);
 }
 
 function createTable($tables, $drop=false) {

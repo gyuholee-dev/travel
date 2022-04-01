@@ -127,7 +127,7 @@ section {
   border-radius: 10px;
 }
 
-section.setup {
+section {
   margin-top: 30px;
   background-color: white;
   &.login {
@@ -137,6 +137,15 @@ section.setup {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
+    &.red {
+      color: red;
+    }
+  }
+  .box {
+    p {
+      padding: 0 5px;
+      margin-bottom: 10px;
+    }
   }
   table {
     margin-bottom: 15px;
