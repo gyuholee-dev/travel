@@ -70,6 +70,11 @@ function checkDB($dbConfig, $log=false) {
   }
 }
 
+// DB 접속
+function connectDB($dbConfig, $log=false) {
+  return checkDB($dbConfig, $log);
+}
+
 // DB 생성
 function createDB($dbConfig, $log=true) {
   global $MSG;
