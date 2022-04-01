@@ -44,7 +44,9 @@ $content .= <<<HTML
       </div>
     </form>
   </section>
+HTML;
 
+$content .= ($_SERVER['HTTP_HOST']!='localhost')?<<<HTML
   <section class="comment">
     <div class="title red">주의!</div>
     <div class="box">
@@ -56,4 +58,4 @@ $content .= <<<HTML
       <img src="setup/permission.png">
     </div>
   </section>
-HTML;
+HTML:'';
