@@ -1,5 +1,7 @@
 <?php // 셋업 함수
 
+// DB 함수 ------------------------------------------------
+
 // DB 로그인
 function loginDB($dbConfig, $log=false) {
   global $DB;
@@ -82,9 +84,9 @@ function createDB($dbConfig, $log=true) {
     $$key = $value;
   }
   try {
-    $db = mysqli_connect($host, $user, $pass);
+    $DB = mysqli_connect($host, $user, $pass);
     $sql = "CREATE DATABASE $database";
-    mysqli_query($db, $sql);
+    mysqli_query($DB, $sql);
     if ($log) {
       $MSG['class'] = 'green';
       $MSG['log'] = 'DB 생성 성공';
@@ -117,38 +119,72 @@ function makeDBConfig($dbConfig, $log=false) {
   fclose($file);
 }
 
-function createTable($tables, $drop=false) {
+// 테이블 생성
+function createTable($table, $drop=false, $log=false) {
   global $DB;
   global $MSG;
 
-  foreach ($tables as $key => $table) {
-    if ($drop) {
-      $sql = "DROP TABLE IF EXISTS $table";
-      mysqli_query($DB, $sql);
+  if ($drop) {
+    $sql = "DROP TABLE IF EXISTS $table";
+    mysqli_query($DB, $sql);
+  }
+
+  // echo $table.'<br>';
+  $sql = file_get_contents('data/'.$table.'.sql');
+  // echo $sql.'<br><br>';
+
+  try {
+    mysqli_query($DB, $sql);
+    if ($log) {
+      if ($MSG['class'] != 'red') {
+        $MSG['class'] = 'green';
+      }
+      $MSG['log'] .= "$table(성공) ";
     }
-    /* $sql = "CREATE TABLE $table (
-      id INT(11) NOT NULL AUTO_INCREMENT,
-      name VARCHAR(255) NOT NULL,
-      email VARCHAR(255) NOT NULL,
-      password VARCHAR(255) NOT NULL,
-      PRIMARY KEY (id)
-    )"; */
-    // mysqli_query($DB, $sql);
+    return true;
+  } catch (Exception $e) {
+    if ($log) {
+      $MSG['class'] = 'red';
+      $MSG['log'] .= "$table(실패) ";
+    }
+    return false;
   }
 }
 
-function checkTable($tables) {
+// 테이블 검사
+function checkTable($table, $log=false) {
   global $DB;
   global $MSG;
 
-  foreach ($tables as $key => $table) {
-    $sql = "SHOW TABLES LIKE '$table'";
-    $result = mysqli_query($DB, $sql);
-    if (mysqli_num_rows($result) == 0) {
-      $MSG['class'] = 'red';
-      $MSG['log'] = '테이블 없음';
-      return false;
+  mysqli_report(MYSQLI_REPORT_STRICT);
+
+  $sql = "SHOW TABLES LIKE '$table'";
+  $result = mysqli_query($DB, $sql);
+  if (mysqli_num_rows($result) == 0) {
+    if ($log) {
+      if ($MSG['class'] != 'red') {
+        $MSG['class'] = 'green';
+      }
+      $MSG['log'] .= "$table(없음) ";
     }
+    return false;
+  }
+  if ($log) {
+    $MSG['class'] = 'red';
+    $MSG['log'] .= "$table(있음) ";
   }
   return true;
+}
+
+// 코드 생성
+// 현재 시간을 소스로 최대 32자 임의 문자열 생성
+function makeCode($max=32, $upper=false) {
+  $code = md5(time());
+  if ($max <= 32) {
+    $code = substr($code, 0, $max);
+  }
+  if ($upper) {
+    $code = strtoupper($code);
+  }
+  return $code;
 }
