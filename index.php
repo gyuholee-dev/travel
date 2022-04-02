@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="images/logo/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="styles/style.css">
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-        <script src="javascript/script.js" defer="defer"></script>
+        <script src="scripts/script.js" defer="defer"></script>
         <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
         <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-pen.css" rel="stylesheet">
      </head>
