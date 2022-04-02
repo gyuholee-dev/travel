@@ -32,11 +32,7 @@ if (!$USER) {
 }
 
 // 메시지
-if ($MSG['log'] != '') {
-  $message = <<<HTML
-    <div id="message" class="$MSG[class]">$MSG[log]</div>
-  HTML;
-}
+$message = "<div id='message'>".printLog()."</div>";
 
 // 헤더
 if ($USER && $ACT != 'login') {

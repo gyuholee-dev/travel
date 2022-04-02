@@ -4,12 +4,13 @@
 connectDB($DBCONF, false);
 
 // 테이블 기본값
+$prefix = 'travel_';
 $drop = true;
 $tables = [
-  'item' => 'item',
-  'member' => 'member',
-  'booking' => 'booking',
-  'board' => 'board',
+  'item' => $prefix.'item',
+  'member' => $prefix.'member',
+  'booking' => $prefix.'booking',
+  'board' => $prefix.'board',
 ];
 
 // 포스트 서브밋 처리

@@ -1,4 +1,4 @@
-CREATE TABLE item (
+CREATE TABLE travel_item (
   itemcode CHAR(8) NOT NULL,
   itemtitle VARCHAR(80),
   category CHAR(2),

@@ -32,6 +32,9 @@ table {
 
 #message {
   width: 100%;
+}
+
+#message .log {
   padding: 5px 10px;
   background-color: gray;
   color: white;
@@ -39,15 +42,15 @@ table {
   text-align: center;
 }
 
-#message.blue {
-  background-color: blue;
+#message .log.info {
+  background-color: gray;
 }
 
-#message.green {
+#message .log.success {
   background-color: green;
 }
 
-#message.red {
+#message .log.error {
   background-color: red;
 }
 

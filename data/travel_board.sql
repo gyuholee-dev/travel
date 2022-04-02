@@ -1,4 +1,4 @@
-CREATE TABLE board (
+CREATE TABLE travel_board (
   postnum INT AUTO_INCREMENT,
   category CHAR(10),
   title VARCHAR(80),

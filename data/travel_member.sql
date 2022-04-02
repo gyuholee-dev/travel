@@ -1,4 +1,4 @@
-CREATE TABLE member (
+CREATE TABLE travel_member (
   userid CHAR(20) NOT NULL,
   username VARCHAR(20),
   password CHAR(20),

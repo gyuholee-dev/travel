@@ -1,4 +1,4 @@
-CREATE TABLE booking (
+CREATE TABLE travel_booking (
   ordernum INT AUTO_INCREMENT,
   orderdate CHAR(19), 
   itemcode CHAR(8),
