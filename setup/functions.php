@@ -16,7 +16,7 @@ function openJson($file) {
 
 // json 파일 세이브
 function saveJson($file, $json) {
-  $json = json_encode($json, JSON_PRETTY_PRINT);
+  $json = json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
   return file_put_contents($file, $json);
 }
 
