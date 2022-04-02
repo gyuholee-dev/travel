@@ -1,14 +1,22 @@
 <?php // init.php
 // 초기화
-require_once INC.'functions.php';
+require_once 'includes/functions.php';
 ini_set('display_errors', 'On');
 mysqli_report(MYSQLI_REPORT_ALL);
 session_start();
 
-// 패스 상수 정의
-// define('INC', 'includes/');
+// 패스 상수 선언
+// define('ROOT', '/'.basename(getcwd()).'/');
+define('INC', 'includes/');
 define('CONF', 'configs/');
+define('DATA', 'data/');
+define('FILE', 'files/');
+define('PAGE', 'pages/');
+define('IMG', 'images/');
+define('STL', 'styles/');
+define('SCT', 'scripts/');
 define('TPL', 'templates/');
+define('HTML', 'pages/html/');
 
 //글로벌 변수
 global $MSG;

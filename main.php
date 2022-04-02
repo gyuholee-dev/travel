@@ -1,7 +1,6 @@
 <?php // main.php
 // 초기화
-define('INC', 'includes/');
-require_once INC.'init.php';
+require_once 'includes/init.php';
 
 // 컨텐츠
 $head = '';
@@ -13,7 +12,7 @@ $aside = '';
 $footer = '';
 
 // 페이지
-include "pages/$PAGE.php";
+include PAGE."$PAGE.php";
 
 // 헤드
 $head_data = [
