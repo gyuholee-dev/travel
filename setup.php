@@ -3,7 +3,7 @@
 require_once 'setup/init.php';
 
 // 변수 선언
-$header = ''; // 헤더
+$nav = ''; // 메뉴
 $message = ''; // 메시지
 $content = ''; // 컨텐츠
 
@@ -32,40 +32,36 @@ if (!$USER) {
 }
 
 // 메시지
-$message = "<div id='message'>".printLog()."</div>";
+$message = printLog();
 
-// 헤더
+// 메뉴
 if ($USER && $ACT != 'login') {
   $active = ['db'=>'','table'=>'','data'=>''];
   $active[$ACT] = 'active';
   $disabled = checkDB($DBCONF) ? '' : 'disabled';
-  $header = <<<HTML
-  <header>
-    <nav class="menu">
-      <ul>
-        <li class="$active[db]">
-          <a href="setup.php?action=db">MariaDB 설정</a>
-        </li>
-        <li class="$active[table] $disabled">
-          <a href="setup.php?action=table">테이블 생성</a>
-        </li>
-        <li class="$active[data] $disabled">
-          <a href="setup.php?action=data">데이터 입력</a>
-        </li>
-        <li class="$disabled">
-          <a href="main.php">사이트 메인</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-HTML;
+  $nav = <<<HTML
+    <ul>
+      <li class="$active[db]">
+        <a href="setup.php?action=db">MariaDB 설정</a>
+      </li>
+      <li class="$active[table] $disabled">
+        <a href="setup.php?action=table">테이블 생성</a>
+      </li>
+      <li class="$active[data] $disabled">
+        <a href="setup.php?action=data">데이터 입력</a>
+      </li>
+      <li class="$disabled">
+        <a href="main.php">사이트 메인</a>
+      </li>
+    </ul>
+  HTML;
 }
 
 //------------------------ 랜더링 ------------------------
 
 // 템플릿에 전달할 변수
 $content_values = array( 
-  '{header}' => $header,
+  '{nav}' => $nav,
   '{message}' => $message,
   '{content}' => $content,
 );
