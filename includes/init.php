@@ -1,9 +1,14 @@
 <?php // init.php
 // 초기화
-require_once 'includes/functions.php';
+require_once INC.'functions.php';
 ini_set('display_errors', 'On');
 mysqli_report(MYSQLI_REPORT_ALL);
 session_start();
+
+// 패스 상수 정의
+// define('INC', 'includes/');
+define('CONF', 'configs/');
+define('TPL', 'templates/');
 
 //글로벌 변수
 global $MSG;
@@ -24,8 +29,8 @@ $MSG = [
 ];
 
 // 설정파일 로드
-$INFO = openJson('configs/info.json');
-$CONF = openJson('configs/config.json');
+$INFO = openJson(CONF.'info.json');
+$CONF = openJson(CONF.'config.json');
 
 // 로그인 체크
 if (isset($_SESSION['key'])) {
@@ -43,8 +48,8 @@ if ($_SERVER['HTTP_HOST']=='localhost') {
 } else {
   $dbConfigFile = 'db.cafe24.json';
 }
-if (fileExists('configs/'.$dbConfigFile)) {
-  $DBCONF = openJson('configs/'.$dbConfigFile);
+if (fileExists(CONF.$dbConfigFile)) {
+  $DBCONF = openJson(CONF.$dbConfigFile);
 } else { // 존재하지 않을 경우 에러 메시지 출력
   // alert('DB 설정파일을 생성해 주세요', 'setup.php');
   pushLog('DB 설정파일을 생성해 주세요', 'error');
