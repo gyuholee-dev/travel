@@ -1,44 +1,68 @@
 <?php // init.php
-// 함수
+// 초기화
 require_once 'includes/functions.php';
+ini_set('display_errors', 'On');
+mysqli_report(MYSQLI_REPORT_ALL);
+session_start();
 
-// 로그
+//글로벌 변수
 global $MSG;
-
-// 사이트 정보
 global $INFO;
-
-// 환경변수
+global $CONF;
+global $USER;
 global $DB;
+global $DBCONF;
 global $PAGE;
 global $ACT;
-global $CODE;
 global $DO;
 
-// 로그
-$MSG = ['class'=>'', 'log'=>''];
+// 메시지
+$MSG = [
+  'info' => '',
+  'success' => '',
+  'error' => ''
+];
 
-// DB 접속
-if ($_SERVER['HTTP_HOST']=='localhost') {
-  // 서버가 로컬호스트일 경우 기본 DB 설정파일을 불러옴
-  $dbConfig = json_decode(file_get_contents('configs/db.localhost.json'),true);
-} else {
-  // 서버가 cafe24일 경우 cafe24 DB 설정파일을 불러옴
-  $dbConfig = json_decode(file_get_contents('configs/db.cafe24.json'),true);
+// 설정파일 로드
+$INFO = openJson('configs/info.json');
+$CONF = openJson('configs/config.json');
+
+// 로그인 체크
+if (isset($_SESSION['key'])) {
+  if (isset($_COOKIE['key']) && $_SESSION['key'] == $_COOKIE['key']) {
+    $USER = $_SESSION['key'];
+  } else {
+    session_destroy();
+    setcookie('key', '', time()-60);
+  }
 }
-// DB 접속. 오류는 $MSG에 기록됨
-connectDB($dbConfig);
+
+// DB 설정파일 로드
+if ($_SERVER['HTTP_HOST']=='localhost') {
+  $dbConfigFile = 'db.localhost.json';
+} else {
+  $dbConfigFile = 'db.cafe24.json';
+}
+if (fileExists('configs/'.$dbConfigFile)) {
+  $DBCONF = openJson('configs/'.$dbConfigFile);
+} else { // 존재하지 않을 경우 에러 메시지 출력
+  // alert('DB 설정파일을 생성해 주세요', 'setup.php');
+  pushLog('DB 설정파일을 생성해 주세요', 'error');
+}
+// DB 접속
+if ($DBCONF) {
+  connectDB($DBCONF);
+}
 
 /* 리퀘스트
-page: main, about, tour, contact, etc...
+page: top, about, tour, contact, etc...
 action 액션: list, item...
 code: 상품코드
-do 실행: 
+do: 실행 
   item&do=view
           edit
           delete
 */
 $PAGE = isset($_REQUEST['page'])?$_REQUEST['page']:'top';
 $ACT = isset($_REQUEST['action'])?$_REQUEST['action']:'list';
-$DO = isset($_REQUEST['action'])?$_REQUEST['action']:'view';
-$CODE = isset($_REQUEST['code'])?$_REQUEST['code']:'00000000';
+$DO = isset($_REQUEST['do'])?$_REQUEST['do']:'view';

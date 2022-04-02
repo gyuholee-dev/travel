@@ -2,6 +2,32 @@
 
 // 기초 함수 ------------------------------------------------
 
+// 경고 출력
+function alert($msg, $url=null) {
+  $script = 'alert("'.$msg.'");';
+  $script .= $url?'location.href="'.$url.'";':'';
+  $script = "<script>$script</script>";
+  echo $script;
+}
+
+// 로그 입력
+function pushLog($log, $class='info') {
+  global $MSG;
+  $MSG[$class] .= ($MSG[$class] != '')?' | ':'';
+  $MSG[$class] .= $log;
+  return true;
+}
+
+// 로그 출력
+function printLog() {
+  global $MSG;
+  $html = '';
+  foreach ($MSG as $type => $log) {
+    $html .= $log?"<div class='log $type'>$log</div>":'';
+  }
+  return "<div id='message'>$html</div>";
+}
+
 // 파일 존재 검사
 function fileExists($file) {
   return file_exists($file);
@@ -20,22 +46,18 @@ function saveJson($file, $json) {
   return file_put_contents($file, $json);
 }
 
-// 로그 입력
-function pushLog($log, $class='info') {
-  global $MSG;
-  $MSG[$class] .= ($MSG[$class] != '')?' | ':'';
-  $MSG[$class] .= $log;
-  return true;
-}
 
-// 로그 출력
-function printLog() {
-  global $MSG;
-  $html = '';
-  foreach ($MSG as $type => $log) {
-    $html .= $log?"<div class='log $type'>$log</div>":'';
+// 코드 생성
+// 현재 시간을 소스로 최대 32자 임의 문자열 생성
+function makeCode($max=32, $upper=false) {
+  $code = md5(time());
+  if ($max <= 32) {
+    $code = substr($code, 0, $max);
   }
-  return $html;
+  if ($upper) {
+    $code = strtoupper($code);
+  }
+  return $code;
 }
 
 // DB 함수 ------------------------------------------------
@@ -63,7 +85,7 @@ function loginDB($dbConfig, $log=false) {
 }
 
 // DB 접속
-function connectDB($dbConfig, $log=true) {
+function connectDB($dbConfig, $log=false) {
   global $DB;
   global $MSG;
   foreach ($dbConfig as $key => $value) {

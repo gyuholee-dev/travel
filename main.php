@@ -2,16 +2,9 @@
 // 초기화
 require_once 'includes/init.php';
 
-// 사이트 정보
-$INFO = [
-  'title'=>'블라썸투어',
-  'subtitle'=>'여행을 즐기는 방법',
-  'description'=>'블라썸투어는 여행을 즐기는 방법을 소개합니다.',
-  'author'=>'블라썸투어',
-];
-
 // 컨텐츠
 $head = '';
+$message = '';
 $header = '';
 $nav = '';
 $content = '';
@@ -28,6 +21,9 @@ $head_values = [
 ];
 $head = strtr(file_get_contents('templates/head.html'), $head_values);
 
+// 메시지
+$message = printLog();
+
 // 헤더
 $header_values = [];
 $header = strtr(file_get_contents('templates/header.html'), $header_values);
@@ -41,6 +37,7 @@ $footer = strtr(file_get_contents('templates/footer.html'), $footer_values);
 
 $content_values = array(
   '{head}' => $head,
+  '{message}' => $message,
   '{header}' => $header,
   '{nav}' => $nav,
   '{content}' => $content,
