@@ -1,6 +1,7 @@
 <?php // main.php
 // 초기화
-require_once 'includes/init.php';
+define('INC', 'includes/');
+require_once INC.'init.php';
 
 // 컨텐츠
 $head = '';
@@ -15,36 +16,35 @@ $footer = '';
 include "pages/$PAGE.php";
 
 // 헤드
-$head_values = [
-  '{title}' => "$INFO[title] : $INFO[subtitle]",
-  '{description}' => "$INFO[description]",
+$head_data = [
+  'title' => "$INFO[title] : $INFO[subtitle]",
+  'description' => "$INFO[description]",
 ];
-$head = strtr(file_get_contents('templates/head.html'), $head_values);
+$head = renderElement(TPL.'head.html', $head_data);
 
 // 메시지
 $message = printLog();
 
 // 헤더
-$header_values = [];
-$header = strtr(file_get_contents('templates/header.html'), $header_values);
+$header_data = [];
+$header = renderElement(TPL.'header.html', $header_data);
 
 // 푸터
-$footer_values = [];
-$footer = strtr(file_get_contents('templates/footer.html'), $footer_values);
+$footer_data = [];
+$footer = renderElement(TPL.'footer.html', $footer_data);
 
 
 // 랜더링 --------------------------------------------------
 
-$content_values = array(
-  '{head}' => $head,
-  '{message}' => $message,
-  '{header}' => $header,
-  '{nav}' => $nav,
-  '{content}' => $content,
-  '{aside}' => $aside,
-  '{footer}' => $footer,
+$content_data = array(
+  'head' => $head,
+  'message' => $message,
+  'header' => $header,
+  'nav' => $nav,
+  'content' => $content,
+  'aside' => $aside,
+  'footer' => $footer,
 );
 
-$html = file_get_contents('templates/template.html');
-$html = strtr($html, $content_values);
+$html = renderElement(TPL.'template.html', $content_data);
 echo $html;
