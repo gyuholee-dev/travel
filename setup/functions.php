@@ -1,5 +1,26 @@
 <?php // 셋업 함수
 
+// 기초 함수 ------------------------------------------------
+
+// 파일 존재 검사
+function fileExists($file) {
+  return file_exists($file);
+}
+
+// json 파일 오픈
+function openJson($file) {
+  $json = file_get_contents($file);
+  $json = json_decode($json, true);
+  return $json;
+}
+
+// json 파일 세이브
+function saveJson($file, $json) {
+  $json = json_encode($json, JSON_PRETTY_PRINT);
+  return file_put_contents($file, $json);
+}
+
+
 // DB 함수 ------------------------------------------------
 
 // DB 로그인
@@ -104,19 +125,21 @@ function createDB($dbConfig, $log=true) {
 // DB 설정파일 생성
 function makeDBConfig($dbConfig, $log=false) {
   global $MSG;
-  $file = fopen('configs/'.$dbConfig['file'], 'w');
-  $dbConfig = json_encode($dbConfig);
-  $write = fwrite($file, $dbConfig);
-  if ($log) {
-    if ($write !== false) {
-        $MSG['class'] = 'green';
-        $MSG['log'] = '설정파일 저장됨';
-    } else {
-      $MSG['class'] = 'red';
-      $MSG['log'] = '설정파일 저장 실패';
+  $file = 'configs/'.$dbConfig['file'];
+  $write = saveJson($file, $dbConfig);
+  if ($write !== false) {
+    if ($log) {
+      $MSG['class'] = 'green';
+      $MSG['log'] = '설정파일 저장됨';
     }
+    return true;
+  } else {
+    if ($log) {
+        $MSG['class'] = 'red';
+        $MSG['log'] = '설정파일 저장 실패';
+    }
+    return false;
   }
-  fclose($file);
 }
 
 // 테이블 생성

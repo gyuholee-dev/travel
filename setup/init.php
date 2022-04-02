@@ -49,8 +49,8 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') { // 로컬호스트
   ];
 }
 // 설정파일 로드
-if (file_exists('configs/'.$DBCONF['file'])) {
-  $DBCONF = json_decode(file_get_contents('configs/'.$DBCONF['file']),true);
+if (fileExists('configs/'.$DBCONF['file'])) {
+  $DBCONF = openJson('configs/'.$DBCONF['file']);
 } else { // 존재하지 않을 경우 에러 메시지 출력
   if ($USER && $ACT != 'login') {
     $MSG['log'] = 'DB 설정파일을 생성해 주세요';

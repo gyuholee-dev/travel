@@ -1,4 +1,5 @@
 <?php // functions.php
+// 기초 함수
 
 // DB 접속
 // TODO: 오류메시지를 배열로 변경
