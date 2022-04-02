@@ -35,7 +35,7 @@ function printLog() {
   foreach ($MSG as $type => $log) {
     $html .= $log?"<div class='log $type'>$log</div>":'';
   }
-  return $html;
+  return "<div id='message'>$html</div>";
 }
 
 // 코드 생성
