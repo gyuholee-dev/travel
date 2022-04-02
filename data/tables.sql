@@ -18,7 +18,7 @@ summary 상품 요약: [특급호텔] 그랜드 하얏트 제주 에어텔 3일 
 description 상품 상세설명: 상품설명 및 일정 정보...
 */
 
-CREATE TABLE item (
+CREATE TABLE travel_item (
   itemcode CHAR(8) NOT NULL,
   itemtitle VARCHAR(80),
   category CHAR(2),
@@ -47,7 +47,7 @@ number 예약인원: 3
 flight 항공권: 대한항공(항공사) KE1256(편명) CJU(제주)(출발지) (구분자로 구분해서 저장)
 price 상품가격: item price x number 
 */
-CREATE TABLE booking (
+CREATE TABLE travel_booking (
   ordernum INT AUTO_INCREMENT,
   orderdate CHAR(19), 
   itemcode CHAR(8),
@@ -68,7 +68,7 @@ phone 휴대폰번호 010-1234-5678
 address 주소
 pgroup 권한 그룹: admin, user...
 */
-CREATE TABLE member (
+CREATE TABLE travel_member (
   userid CHAR(20) NOT NULL,
   username VARCHAR(20),
   password CHAR(20),
@@ -89,7 +89,7 @@ regdate 게시물작성일: Y-m-d H:i:s (19자)
 secret 게시물비밀글: 0(공개), 1(비밀글)
 hit 게시물 조회수
 */
-CREATE TABLE board (
+CREATE TABLE travel_board (
   postnum INT AUTO_INCREMENT,
   category CHAR(10),
   title VARCHAR(80),
