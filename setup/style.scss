@@ -46,19 +46,21 @@ table {
 
 #message {
   width: 100%;
-  padding: 5px 10px;
-  background-color: gray;
-  color: white;
-  font-size: 0.9em;
-  text-align: center;
-  &.blue {
-    background-color: blue;
-  }
-  &.green {
-    background-color: green;
-  }
-  &.red {
-    background-color: red;
+  .log {
+    padding: 5px 10px;
+    background-color: gray;
+    color: white;
+    font-size: 0.9em;
+    text-align: center;
+    &.info {
+      background-color: gray;
+    }
+    &.success {
+      background-color: green;
+    }
+    &.error {
+      background-color: red;
+    }
   }
 }
 

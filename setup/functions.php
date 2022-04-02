@@ -20,6 +20,36 @@ function saveJson($file, $json) {
   return file_put_contents($file, $json);
 }
 
+// 로그 입력
+function pushLog($log, $class='info') {
+  global $MSG;
+  $MSG[$class] .= ($MSG[$class] != '')?' | ':'';
+  $MSG[$class] .= $log;
+  return true;
+}
+
+// 로그 출력
+function printLog() {
+  global $MSG;
+  $html = '';
+  foreach ($MSG as $type => $log) {
+    $html .= $log?"<div class='log $type'>$log</div>":'';
+  }
+  return $html;
+}
+
+// 코드 생성
+// 현재 시간을 소스로 최대 32자 임의 문자열 생성
+function makeCode($max=32, $upper=false) {
+  $code = md5(time());
+  if ($max <= 32) {
+    $code = substr($code, 0, $max);
+  }
+  if ($upper) {
+    $code = strtoupper($code);
+  }
+  return $code;
+}
 
 // DB 함수 ------------------------------------------------
 
@@ -33,14 +63,12 @@ function loginDB($dbConfig, $log=false) {
   try {
     $DB = mysqli_connect('localhost', $user, $pass);
     if ($log) {
-      $MSG['class'] = 'green';
-      $MSG['log'] = '로그인 성공';
+      pushLog('로그인 성공', 'success');
     }
     return true;
   } catch (Exception $e) {
     if ($log) {
-      $MSG['class'] = 'red';
-      $MSG['log'] = '로그인 실패: '.$e->getMessage();
+      pushLog('로그인 실패: '.$e->getMessage(), 'error');
     }
     return false;
   }
@@ -56,14 +84,12 @@ function selectDB($dbConfig, $log=false) {
   try {
     $DB = mysqli_select_db($DB, $database);
     if ($log) {
-      $MSG['class'] = 'green';
-      $MSG['log'] = 'DB 선택 성공';
+      pushLog('DB 선택 성공', 'success');
     }
     return true;
   } catch (Exception $e) {
     if ($log) {
-      $MSG['class'] = 'red';
-      $MSG['log'] = 'DB 선택 실패: '.$e->getMessage();
+      pushLog('DB 선택 실패: '.$e->getMessage(), 'error');
     }
     return false;
   }
@@ -80,14 +106,12 @@ function checkDB($dbConfig, $log=false) {
   try {
     $DB = mysqli_connect($host, $user, $pass, $database);
     if ($log) {
-      $MSG['class'] = 'green';
-      $MSG['log'] = 'DB 접속 성공';
+      pushLog('DB 접속 성공', 'success');
     }
     return true;
   } catch (Exception $e) {
     if ($log) {
-      $MSG['class'] = 'red';
-      $MSG['log'] = 'DB 접속 실패: '.$e->getMessage();
+      pushLog('DB 접속 실패: '.$e->getMessage(), 'error');
     }
     return false;
   }
@@ -109,14 +133,12 @@ function createDB($dbConfig, $log=true) {
     $sql = "CREATE DATABASE $database";
     mysqli_query($DB, $sql);
     if ($log) {
-      $MSG['class'] = 'green';
-      $MSG['log'] = 'DB 생성 성공';
+      pushLog('DB 생성 성공', 'success');
     }
     return true;
   } catch (Exception $e) {
     if ($log) {
-      $MSG['class'] = 'red';
-      $MSG['log'] = 'DB 생성 실패: '.$e->getMessage();
+      pushLog('DB 생성 실패: '.$e->getMessage(), 'error');
     }
     return false;
   }
@@ -129,14 +151,12 @@ function makeDBConfig($dbConfig, $log=false) {
   $write = saveJson($file, $dbConfig);
   if ($write !== false) {
     if ($log) {
-      $MSG['class'] = 'green';
-      $MSG['log'] = '설정파일 저장됨';
+      pushLog('설정파일 저장됨', 'success');
     }
     return true;
   } else {
     if ($log) {
-        $MSG['class'] = 'red';
-        $MSG['log'] = '설정파일 저장 실패';
+      pushLog('설정파일 저장 실패', 'error');
     }
     return false;
   }
@@ -152,23 +172,16 @@ function createTable($table, $drop=false, $log=false) {
     mysqli_query($DB, $sql);
   }
 
-  // echo $table.'<br>';
   $sql = file_get_contents('data/'.$table.'.sql');
-  // echo $sql.'<br><br>';
-
   try {
     mysqli_query($DB, $sql);
     if ($log) {
-      if ($MSG['class'] != 'red') {
-        $MSG['class'] = 'green';
-      }
-      $MSG['log'] .= "$table(성공) ";
+      pushLog("생성 성공: $table", 'success');
     }
     return true;
   } catch (Exception $e) {
     if ($log) {
-      $MSG['class'] = 'red';
-      $MSG['log'] .= "$table(실패) ";
+      pushLog("생성 실패: $table", 'error');
     }
     return false;
   }
@@ -178,36 +191,20 @@ function createTable($table, $drop=false, $log=false) {
 function checkTable($table, $log=false) {
   global $DB;
   global $MSG;
-
   mysqli_report(MYSQLI_REPORT_STRICT);
-
+  
   $sql = "SHOW TABLES LIKE '$table'";
-  $result = mysqli_query($DB, $sql);
-  if (mysqli_num_rows($result) == 0) {
+  $rows = mysqli_num_rows(mysqli_query($DB, $sql));
+  mysqli_report(MYSQLI_REPORT_ALL);
+
+  if ($rows == 0) {
     if ($log) {
-      if ($MSG['class'] != 'red') {
-        $MSG['class'] = 'green';
-      }
-      $MSG['log'] .= "$table(없음) ";
+      pushLog("테이블 없음: $table", 'success');
     }
     return false;
   }
   if ($log) {
-    $MSG['class'] = 'red';
-    $MSG['log'] .= "$table(있음) ";
+    pushLog("테이블 있음: $table", 'error');
   }
   return true;
-}
-
-// 코드 생성
-// 현재 시간을 소스로 최대 32자 임의 문자열 생성
-function makeCode($max=32, $upper=false) {
-  $code = md5(time());
-  if ($max <= 32) {
-    $code = substr($code, 0, $max);
-  }
-  if ($upper) {
-    $code = strtoupper($code);
-  }
-  return $code;
 }
