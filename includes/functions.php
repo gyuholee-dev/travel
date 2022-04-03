@@ -46,7 +46,6 @@ function saveJson($file, $json) {
   return file_put_contents($file, $json);
 }
 
-
 // 코드 생성
 // 현재 시간을 소스로 최대 32자 임의 문자열 생성
 function makeCode($max=32, $upper=false) {
@@ -103,15 +102,4 @@ function connectDB($dbConfig, $log=false) {
     }
     return false;
   }
-}
-
-// 엘리먼트 함수 ------------------------------------------------
-
-// 템플릿을 로드하여 html 엘리먼트 생성
-function renderElement($template, $data=array()) {
-  $html = file_get_contents($template);
-  foreach ($data as $key => $value) {
-    $html = str_replace('{'.$key.'}', $value, $html);
-  }
-  return $html;
 }
