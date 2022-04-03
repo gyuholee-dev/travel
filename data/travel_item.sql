@@ -1,5 +1,6 @@
 CREATE TABLE travel_item (
-  itemcode CHAR(8) NOT NULL,
+  idx AUTO_INCREMENT,
+  itemcode CHAR(8),
   itemtitle VARCHAR(80),
   category CHAR(2),
   location CHAR(20),
@@ -14,5 +15,5 @@ CREATE TABLE travel_item (
   image5 VARCHAR(120),
   summary VARCHAR(140),
   description TEXT,
-  PRIMARY KEY (itemcode)
+  PRIMARY KEY (idx)
 )
