@@ -56,3 +56,10 @@ function getPlaceList($category, $search='') {
 
   return $placeList;
 }
+
+// 카테고리와 검색어에 따라 상품 데이터를 리스트로 반환
+function getProductList($category, $search='', $max=0) {
+  $fileList = glob(DATA.'item_*.json');
+  // print_r($fileList);
+
+}
