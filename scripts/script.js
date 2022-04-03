@@ -25,3 +25,42 @@ $(function(){
       $(".house").css("color","#F26E62");
   });
 });
+
+//디테일이미지스왑
+$(function(){
+  $(".dsum1").click(function(){
+    $(".detail-img-bottom1").css("display","block");
+    $(".detail-img-bottom2").css("display","none");
+    $(".detail-img-bottom3").css("display","none");
+    $(".detail-img-bottom4").css("display","none");
+    $(".detail-img-bottom5").css("display","none");
+  });
+  $(".dsum2").click(function(){
+    $(".detail-img-bottom2").css("display","block");
+    $(".detail-img-bottom1").css("display","none");
+    $(".detail-img-bottom3").css("display","none");
+    $(".detail-img-bottom4").css("display","none");
+    $(".detail-img-bottom5").css("display","none");
+  });
+  $(".dsum3").click(function(){
+    $(".detail-img-bottom3").css("display","block");
+    $(".detail-img-bottom2").css("display","none");
+    $(".detail-img-bottom1").css("display","none");
+    $(".detail-img-bottom4").css("display","none");
+    $(".detail-img-bottom5").css("display","none");
+  });
+  $(".dsum4").click(function(){
+    $(".detail-img-bottom4").css("display","block");
+    $(".detail-img-bottom2").css("display","none");
+    $(".detail-img-bottom3").css("display","none");
+    $(".detail-img-bottom1").css("display","none");
+    $(".detail-img-bottom5").css("display","none");
+  });
+  $(".dsum5").click(function(){
+    $(".detail-img-bottom5").css("display","block");
+    $(".detail-img-bottom2").css("display","none");
+    $(".detail-img-bottom3").css("display","none");
+    $(".detail-img-bottom4").css("display","none");
+    $(".detail-img-bottom1").css("display","none");
+  });
+});
