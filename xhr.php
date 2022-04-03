@@ -29,6 +29,10 @@ function xhr_test() {
   echo json_encode($_GET);
 }
 
+// XHR 함수 ------------------------------------------------
+// 보안 문제로 직접 function 에 억세스하지 않도록 함
+// 설정파일 로드 함수를 만들 경우 지정된 파일명만 로드하도록 함 
+
 // XHR 유저아이디 검사
 /* function xhr_checkId() {
   echo checkId($_GET['userid']);
