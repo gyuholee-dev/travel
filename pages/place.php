@@ -4,6 +4,8 @@
 $search = $_REQUEST['search'] ?? '';
 $category = $_REQUEST['category'] ?? '전체'; // 국내, 해외, 전체
 
+// 서치박스 --------------------------------------------------
+
 // 액티브
 $active = ['국내'=>'', '해외'=>'', '전체'=>''];
 $active[$category] = 'active';
@@ -21,7 +23,11 @@ $searchBox_data = [
 $searchBox = renderElement(TPL.'searchBox.html', $searchBox_data);
 
 // 랜더링 --------------------------------------------------
+
+
+
+// 랜더링 --------------------------------------------------
 $content_data = [
   'searchBox' => $searchBox,
 ];
-$content .= renderElement(HTML.'top.html', $content_data);
+$content .= renderElement(HTML.'place.html', $content_data);
