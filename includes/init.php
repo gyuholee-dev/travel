@@ -1,6 +1,7 @@
 <?php // init.php
 // 초기화
 require_once 'includes/functions.php';
+require_once 'includes/elements.php';
 ini_set('display_errors', 'On');
 mysqli_report(MYSQLI_REPORT_ALL);
 session_start();
@@ -15,7 +16,7 @@ define('PAGE', 'pages/');
 define('IMG', 'images/');
 define('STL', 'styles/');
 define('SCT', 'scripts/');
-define('TPL', 'templates/');
+define('TPL', 'pages/templates/');
 define('HTML', 'pages/html/');
 
 //글로벌 변수
