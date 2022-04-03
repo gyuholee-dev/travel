@@ -1,0 +1,29 @@
+<div id="searchBox" class="search-box">
+  <div class="search-top">
+    <p class="pp1 {activeKorea}">
+      <a href="?page=place&category=국내">국내투어</a>
+    </p>
+    <p class="pp1 {activeWorld}">
+      <a href="?page=place&category=해외">해외투어</a>
+    </p>
+  </div><!-- search-top -->
+  <div class="search-bottom" style="height: 100px;">
+    <form name="formSearch" method="get" action="">
+      <br><br>
+      <table class="table1">
+        <tr>
+          <td>
+            <input type="text" name="search" value="{search}" placeholder="목적지를 검색하세요.">&nbsp;&nbsp;&nbsp;
+          </td>
+          <td>
+            <!-- <input type="button" value="search" class="bt" onclick="send()"> -->
+            <input type="hidden" name="page" value="place">
+            <input type="hidden" name="category" value="{category}">
+            <button type="button" class="bt" onclick="sendSearch()">search</button>
+          </td>
+        </tr>
+      </table><br><br>
+    </form>
+  </div><!-- search-bottom -->
+  {placeList}
+</div><!-- search-box -->

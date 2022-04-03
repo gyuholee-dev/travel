@@ -71,7 +71,6 @@ if ($DBCONF) {
 /* 리퀘스트
 page: top, about, tour, contact, etc...
 action 액션: list, item...
-code: 상품코드
 do: 실행 
   item&do=view
           edit
