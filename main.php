@@ -2,7 +2,7 @@
 // 초기화
 require_once 'includes/init.php';
 
-// 컨텐츠
+// 데이터 선언
 $head = '';
 $message = '';
 $header = '';
@@ -11,7 +11,7 @@ $content = '';
 $aside = '';
 $footer = '';
 
-// 페이지
+// 컨텐츠 -> 페이지에서 처리
 include PAGE."$PAGE.php";
 
 // 헤드
@@ -35,7 +35,7 @@ $footer = renderElement(TPL.'footer.html', $footer_data);
 
 // 랜더링 --------------------------------------------------
 
-$content_data = array(
+$html_data = array(
   'head' => $head,
   'message' => $message,
   'header' => $header,
@@ -45,5 +45,5 @@ $content_data = array(
   'footer' => $footer,
 );
 
-$html = renderElement(TPL.'template.html', $content_data);
+$html = renderElement(TPL.'template.html', $html_data);
 echo $html;
