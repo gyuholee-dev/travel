@@ -14,5 +14,5 @@
             "extension": ".min.css"
         }
     ],
-    "easysass.excludeRegex": "^(?!style.scss).+",
+    // "easysass.excludeRegex": "^(?!style.scss).+",
 }
