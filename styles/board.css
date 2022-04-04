@@ -1,4 +1,4 @@
-.headerbox{
+.headerbox {
     display: block;
     width:1000px;
     height:1000px;
@@ -6,7 +6,7 @@
     align-items:center;
     text-align:center
 }
-.table1{
+table.board {
     width:66%;
     text-align:center;
     align-items:center;
@@ -16,11 +16,11 @@
     position:absolute;
 }
 
-.table1 tr>td{
+table.board tr>td{
     padding:5px;
     border-bottom:1px solid #999;
 }
-.table1 tr>th{
+table.board tr>th{
     padding:5px;
     border-bottom:1px solid #999;
 }
