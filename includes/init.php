@@ -60,8 +60,7 @@ if ($_SERVER['HTTP_HOST']=='localhost') {
 if (fileExists(CONF.$dbConfigFile)) {
   $DBCONF = openJson(CONF.$dbConfigFile);
 } else { // 존재하지 않을 경우 에러 메시지 출력
-  // alert('DB 설정파일을 생성해 주세요', 'setup.php');
-  pushLog('DB 설정파일을 생성해 주세요', 'error');
+  // pushLog('DB 설정파일을 생성해 주세요', 'error');
 }
 // DB 접속
 if ($DBCONF) {

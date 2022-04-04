@@ -7,6 +7,7 @@
 a{text-decoration: none;color: inherit;}
 p{font-size: 1em; color: #666;font-family: 'NanumSquareRound';}
 header{width: 100%; min-width: 960px; height: 60px;margin: auto;
+    border-bottom: 1px solid #999;
           position: relative;background-color: white;opacity: 100%;}
 header::after {content: "";
     display: block;
@@ -16,7 +17,11 @@ header::after {content: "";
 .logo{width: 300px;height: 60px;padding: 10px 20px;padding-left: 40px; float: left;}
 .logo img{width: 300px; height: auto;}
 .dropwhere{width: 100px;height: 60px;float: left;}
-.dropdown-btn{width: 130px;height: 60px;line-height: 60px;float: left;}
+.dropdown-btn{width: 130px;height: 50px;line-height: 60px;float: left;
+    background-color: rgb(255, 240, 240);text-align: center;margin-top: 10px;
+    border-radius: 20px 20px 0 0 ; border: 1px solid #999;
+    border-bottom: none;
+    box-shadow: 1px -3px 4px  rgba(200, 200, 200,0.5);}
 .dropdown-btn p:hover{color: #333;cursor: pointer;font-weight: bold;}
 .dropwhere-cont{width: 100px; line-height: 30px; display: none;
                 border: 1px solid rgb(200, 200, 200); padding: 20px;
@@ -35,14 +40,18 @@ header::after {content: "";
 .right p:hover{color: #333;cursor: pointer;
     font-weight: bold;transition: all 0.4s;}
 #bodycolor{width: 100%;height: auto;}
+.bodycolor{width: 100%;height: 300px;background-color: rgb(255, 240, 240);
+    position:absolute; z-index:-1;}
 #bodycolor::after {content: "";
     display: block;
     clear: both;}
 #content{width: 960px; height: auto;margin: auto;text-align: center;}  
-.search{width: 960px; height: 180px; text-align: center;
-    margin: auto;padding-top: 30px;}
+.search{width: 960px; height: 180px; text-align: center;z-index: 999;
+    margin: auto;padding-top: 30px;
+    background-color: rgb(255, 240, 240);}
 .search-box{width: 600px; height: 150px; border: 1px solid rgb(200, 200, 200); 
-             border-radius: 20px; margin: auto;}
+             border-radius: 20px; margin: auto;background-color: #fff;
+            box-shadow: 1px 1px 10px  rgba(200, 200, 200,0.5);z-index: 999;}
 .search-top{width: 500px;height: 20px; margin: auto;
     margin-top: 10px;margin-bottom: 5px;
     text-align: center;}
@@ -67,9 +76,21 @@ header::after {content: "";
 
 
 
-.main-event{width: 960px;height: 600px;overflow: hidden;position: relative;}
+.main-event{width: 960px;height: 600px;overflow: hidden;position: relative;
+    box-shadow: 1px -3px 5px  rgba(200, 200, 200,0.5);}
 .main-event-img{width: 960px;height: 600px;overflow: hidden;}
-.main-event-img img{width: 960px;height: auto;}
+.main-event-img img{width: 960px;height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)}
+.main-event:hover .main-event-img img{
+    width: 1160px;height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s;}
 .main-event-write{position: absolute;width: 560px;height: 400px;top: 80px;
     left: 200px;}
 .pp2{font-size: 4em;color: #2a0528;margin-bottom: 30px;font-family: 'NanumPen';
@@ -97,8 +118,9 @@ header::after {content: "";
 
 .helper-cont>div p{float: left;position: absolute;top: 0px; left: 130px;font-size: 1.1em;}
 .helper-cont>div:first-child p{left: 150px;}
-.helper-cont>div p:hover{font-weight: bold;}
-
+.helper-cont>div:hover{background-color: rgb(255, 240, 240);}
+.helper-cont>div:hover p{font-weight: bold;transition: all 0.5s;}
+.helper-cont>div:hover img{width:33px;transition: all 0.5s;}
 
 .promotion-cont{width: 960px;height: 150px;
     justify-content: space-between;
@@ -106,7 +128,10 @@ header::after {content: "";
                }
 .promo-left{width: 590px;height: 150px; float: left; 
     position: relative; overflow: hidden; }
-.promo-left a>img{position: absolute;width: 590px;height: auto;bottom: -90px;left: 0;filter: brightness(50%);}
+.promo-left a>img{position: absolute;width: 590px;
+                 height: auto;bottom: -90px;left: 0;filter: brightness(50%);}
+.promo-left:hover a>img{width: 700px;filter: brightness(100%);transition: all 0.5s;}   
+.promo-left:hover a>p{font-weight: bold; transition: all 0.5s;}                 
 .promo-left a>p{position: absolute; bottom: 10px;left: 10px;
                color: #fff;}
 
@@ -114,12 +139,15 @@ header::after {content: "";
     position: relative;overflow: hidden;}
 .p-box1{position: absolute;width: 300px;height: 120px;bottom: 15px;left: 25px; 
          background-color: #F26E62}    
-.promo-right a>img{position: absolute;width: 500px;height: auto;bottom: -20px;left: 0;filter: blur(3px);filter: grayscale(100%); }
+.promo-right:hover .p-box1{opacity: 80%; transition: all 0.5s;}         
+.promo-right a>img{position: absolute;
+    width: 500px;height: auto;bottom: -20px;
+    left: 0;filter: blur(3px);filter: grayscale(100%); }
 .promo-right p{position:  relative;width: 350px;top: 25px;line-height: 30px;
   color: #fff; }
 
 
-.theme-cont{width: 960px; height: 500px;
+.theme-cont{width: 960px; height: 450px;
     text-align: center; position: relative; margin-top: 20px;}
     
 .theme-icons{position: absolute;width: 400px; height: 100px;
@@ -144,6 +172,7 @@ header::after {content: "";
          position: relative;}
 .t-img{width: 300px;height: 200px;overflow: hidden;margin-bottom: 10px;}
 .t-img img{width: 145%;height: auto; }
+.t-img img:hover{width: 175%;height: auto; transition: all 0.5s;}
 .t-images p{text-align: left; padding-left: 10px; line-height: 20px;}
 .t-images p:hover{font-weight: bold;}
 .hash{background-color: #999;padding: 5px;
@@ -153,6 +182,25 @@ header::after {content: "";
     #bodycolor::after {content: "";
         display: block;
         clear: both;}
+
+#content2{width: 100%; height: auto;}
+.backg1{width: 100%; height: 350px;
+    position: relative;overflow: hidden;}
+.g1{ z-index: -2; }   
+.g1 img{width: 100%;height: auto; position: absolute;
+     bottom: 0px;opacity: 50%;}         
+.theme-imgs4{width: 960px;height: 300px;margin: auto;margin-top: 20px;
+    display: flex; flex-wrap: wrap;
+    justify-content: space-between;align-items: center;}
+.t-images2{width: 200px;height: 300px;overflow: hidden;border-radius: 20px;
+        position: relative;}
+.t-img2{width: 200px;height: 200px;overflow: hidden;margin-top: 10px;
+        background-color: #9262f2;position: absolute;bottom: 0px;}
+        
+.t-img2 img{width: 160%;height: auto; filter: brightness(50%); }
+.t-img2 img:hover{width: 185%;height: auto; transition: all 0.5s;}
+.t-images2 p{text-align: left; padding-left: 10px; line-height: 20px;}
+.t-images2 p:hover{font-weight: bold;}
 
 /* k-place.html css시작 */
 

@@ -37,6 +37,7 @@
         </div><!-- top -->
         </header>
         <div id="bodycolor">
+        <div class="bodycolor"></div>
         <section id="content">   
           <div class="search">
             <div class="search-box">
@@ -123,7 +124,7 @@
               </div>
               <div class="t-icon">
               <div class="t-img1">
-                <img src="images/icons/house.png" ></div>
+                <img src="images/icons/house.png" class="house"></div>
                 <P class="house">산꼴라이프</P>
               </div>
             </div><!-- theme-icons -->
@@ -232,6 +233,44 @@
           </div><!-- theme-cont -->
         </section>
         </div> <!-- bodycolor -->
+        <section id="content2">
+        <div class="backg1">
+            <div class="g1">
+              <img src="images/pictures/background.jpg"></div>
+              <div class="theme-imgs4">
+              <div class="t-images2">
+                <a href="#">
+                <div class="t-img2"></div>
+                <div class="t-img3">
+                <p>이 달의 베스트</p>
+                <p>여행후기</p>
+                </div>
+                <div class=""></div>
+              </a></div>
+            <div class="t-images2">
+                <a href="#">
+                <div class="t-img2">  
+                <img src="images/pictures/house1.jpg"></div>
+                <p>여기에 타이틀 내용적어주세요</p>
+                <p>500,000원 부터~</p>
+              </a></div>
+              <div class="t-images2">
+                <a href="#">
+                <div class="t-img2">  
+                <img src="images/pictures/house2.jpg"></div>
+                <p>여기에 타이틀 내용적어주세요</p>
+                <p>500,000원 부터~</p>
+              </a></div>
+              <div class="t-images2">
+                <a href="#">
+                <div class="t-img2">  
+                <img src="images/pictures/house3.jpg"></div>
+                <p>여기에 타이틀 내용적어주세요</p>
+                <p>500,000원 부터~</p>
+              </a></div>
+            </div><!-- theme-imgs4 -->
+          </div><!--backg1 end-->
+        </section>
         <div class="clear"></div>
         <footer>
           <div class="policy">

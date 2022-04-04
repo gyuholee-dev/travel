@@ -1,5 +1,5 @@
 CREATE TABLE travel_item (
-  idx AUTO_INCREMENT,
+  idx INT AUTO_INCREMENT,
   itemcode CHAR(8),
   itemtitle VARCHAR(80),
   category CHAR(2),
@@ -13,6 +13,7 @@ CREATE TABLE travel_item (
   image3 VARCHAR(120),
   image4 VARCHAR(120),
   image5 VARCHAR(120),
+  event VARCHAR(140),
   summary VARCHAR(140),
   description TEXT,
   PRIMARY KEY (idx)
