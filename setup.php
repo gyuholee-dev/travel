@@ -11,6 +11,7 @@ $content = ''; // 컨텐츠
 // 액션 리퀘스트 값에 따라 각각 다른 페이지를 인클루드한다.
 if (!$USER) {
   // 로그인
+  $ACT = 'login';
   include 'setup/_login.php';
 } else {
   switch ($ACT) {  
@@ -28,6 +29,9 @@ if (!$USER) {
     case 'data':
       include 'setup/_data.php';
       break;
+    
+    default:
+      header('Location: setup.php?action=db');
   }
 }
 
@@ -61,6 +65,7 @@ if ($USER && $ACT != 'login') {
 
 // 템플릿에 전달할 변수
 $content_values = array( 
+  '{action}' => $ACT,
   '{nav}' => $nav,
   '{message}' => $message,
   '{content}' => $content,
@@ -70,4 +75,3 @@ $content_values = array(
 $html = file_get_contents('setup/template.html');
 $html = strtr($html, $content_values);
 echo $html;
-

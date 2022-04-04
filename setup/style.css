@@ -66,6 +66,10 @@ header {
   border-bottom: 1px solid #aaaaaa;
 }
 
+header.login {
+  display: none;
+}
+
 nav.menu {
   height: 40px;
 }
@@ -116,6 +120,10 @@ nav.menu > ul li.disabled a {
   margin: 0 auto;
 }
 
+#container.login {
+  margin-top: 70px;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -128,10 +136,6 @@ section {
 section {
   margin-top: 30px;
   background-color: white;
-}
-
-section.login {
-  margin-top: 70px;
 }
 
 section .title {

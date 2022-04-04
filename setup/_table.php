@@ -32,6 +32,8 @@ if (isset($_POST['confirm'])) {
       checkTable($table, true);
     }
   }
+  $_SESSION['MSG'] = $MSG;
+  header('Location: setup.php?action=table');
 }
 
 $checked = $drop ? 'checked' : '';

@@ -14,8 +14,9 @@ if (isset($_POST['confirm'])) {
     checkDB($DBCONF, true);
   } elseif ($_POST['confirm']=='설정저장') { // 설정파일 저장
     makeDBConfig($DBCONF, true);
-    // header('Location: setup.php');
   }
+  $_SESSION['MSG'] = $MSG;
+  header('Location: setup.php?action=db');
 }
 
 // host, user 조건에 따라 사용자 db 이름 및 생성을 readonly 처리

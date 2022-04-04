@@ -19,8 +19,9 @@ if (isset($_POST['confirm'])) {
     header('Location: setup.php?action=db');
   
   } else { // 로그인 실패
-    $MSG['log'] = '로그인 실패';
-    $MSG['class'] = 'red';
+    pushLog('로그인 실패', 'error');
+    $_SESSION['MSG'] = $MSG;
+    header('Location: setup.php?action=login');
   }
 }
 

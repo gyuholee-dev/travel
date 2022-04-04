@@ -27,11 +27,16 @@ if (isset($_SESSION['key'])) {
 $ACT = isset($_GET['action'])?$_GET['action']:$ACT;
 
 // 메시지
-$MSG = [
-  'info' => '',
-  'success' => '',
-  'error' => ''
-];
+if (isset($_SESSION['MSG'])) {
+  $MSG = $_SESSION['MSG'];
+  unset($_SESSION['MSG']);
+} else {
+  $MSG = [
+    'info' => '',
+    'success' => '',
+    'error' => ''
+  ];
+}
 
 // DB 컨피그 기본값
 $DBCONF = array();
