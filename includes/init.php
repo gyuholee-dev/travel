@@ -77,6 +77,7 @@ if (!$DBCONF) {
       $table = str_replace('.sql', '', basename($file));
       if (!checkTable($table)) {
         $dbLog = '테이블이 존재하지 않습니다.';
+        $DB = disconnectDB($DB);
         break;
       }
     }

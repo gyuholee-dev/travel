@@ -118,6 +118,24 @@ function connectDB($dbConfig, $log=false) {
   }
 }
 
+// DB 접속해제
+function disconnectDB($log=false) {
+  global $DB;
+  global $MSG;
+  try {
+    mysqli_close($DB);
+    if ($log) {
+      pushLog('DB 접속해제 성공', 'success');
+    }
+    return null;
+  } catch (Exception $e) {
+    if ($log) {
+      pushLog('DB 접속해제 실패: '.$e->getMessage(), 'error');
+    }
+    return false;
+  }
+}
+
 // DB 검사
 function checkDB($dbConfig, $log=false) {
   return connectDB($dbConfig, $log);
