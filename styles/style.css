@@ -16,7 +16,7 @@ header::after {content: "";
 .logo{width: 300px;height: 60px;padding: 10px 20px;padding-left: 40px; float: left;}
 .logo img{width: 300px; height: auto;}
 .dropwhere{width: 100px;height: 60px;float: left;}
-.dropdown-btn{width: 200px;height: 60px;line-height: 60px;float: left;}
+.dropdown-btn{width: 130px;height: 60px;line-height: 60px;float: left;}
 .dropdown-btn p:hover{color: #333;cursor: pointer;font-weight: bold;}
 .dropwhere-cont{width: 100px; line-height: 30px; display: none;
                 border: 1px solid rgb(200, 200, 200); padding: 20px;
@@ -207,16 +207,28 @@ header::after {content: "";
 .detail-imgs{width: 960px; height: 700px;} 
 .detail-imgs-top{width: 960px; height: 190px;display: flex;
     flex-wrap: wrap;float: left;}
-.d-sumnails{width: 160px; height: 160px;}
+.d-sumnails{width: 160px; height: 160px;position: relative;}
 .d-sumnails:hover{filter: grayscale(100%);opacity: 80%;cursor: pointer;transition: all 0.4s;}
 .dsum1, .dsum2, .dsum3, .dsum4, .dsum5{width: 160px;height: 160px;margin: 15px; overflow: hidden;}
+.d-sumnails img{width: auto; height: 100%;min-width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);}
 
-.d-sumnails img{width: auto; height: 100%;}s
-.detail-img-bottom1{display: block; width: 920px; height: 500px;overflow: hidden;margin: 20px;}
+.detail-img-bottom1{display: block; width: 910px; position: relative;
+    height: 500px;overflow: hidden;margin: 20px;}
 .detail-img-bottom2, .detail-img-bottom3, .detail-img-bottom4, 
-.detail-img-bottom5{display: none; width: 920px; height: 500px;overflow: hidden;margin: 20px;}
+.detail-img-bottom5{display: none; width: 910px; 
+    height: 500px;overflow: hidden;margin: 20px;
+    position: relative;}
 .detail-img-bottom1 img, .detail-img-bottom2 img, .detail-img-bottom3 img, 
-.detail-img-bottom4 img, .detail-img-bottom5 img{width: 960px; height: auto;}
+.detail-img-bottom4 img, .detail-img-bottom5 img{
+    width: 100%; height: min-content;margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);}
 
 .blank1{width: 960px;height: 30px;border-bottom: 1px solid #999;}
 

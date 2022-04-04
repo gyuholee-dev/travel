@@ -76,21 +76,16 @@
             </div><!-- detail-second end -->
             <div class="detail-imgs">
                 <div class="detail-imgs-top"> <!-- 아래에 이미지5개 불러오기 -->
-                    <div class="dsum1">
-                        <div class="d-sumnails"><img src="images/pictures/building1.jpg"></div>
-                    </div>
-                    <div class="dsum2">
-                        <div class="d-sumnails"><img src="images/pictures/building2.jpg"></div>
-                    </div>
-                    <div class="dsum3">
-                        <div class="d-sumnails"><img src="images/pictures/building3.jpg"></div>
-                    </div>
-                    <div class="dsum4">
-                        <div class="d-sumnails"><img src="images/pictures/history1.jpg"></div>
-                    </div>
-                    <div class="dsum5">
-                        <div class="d-sumnails"><img src="images/pictures/history2.jpg"></div>
-                    </div>
+                    <div class="d-sumnails dsum1">
+                        <img src="images/pictures/building1.jpg"></div>
+                    <div class="d-sumnails dsum2">
+                        <img src="images/pictures/building2.jpg"></div>
+                    <div class="d-sumnails dsum3">
+                        <img src="images/pictures/building3.jpg"></div>
+                    <div class="d-sumnails dsum4">
+                        <img src="images/pictures/history1.jpg"></div>
+                    <div class="d-sumnails dsum5">
+                        <img src="images/pictures/history2.jpg"></div>
                 </div>
                 <div class="detail-img-bottom1">
                     <img src="images/pictures/building1.jpg">

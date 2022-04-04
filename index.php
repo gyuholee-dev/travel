@@ -20,19 +20,19 @@
           <div class="dropwhere">
             <div class="dropdown-btn"><p>어디로 가세요? ▽</p>
             <div class="dropwhere-cont">
-              <p><a href="#">국내여행지</a></p>
-              <p><a href="#">해외여행지</a></p>
-              <p><a href="#">추천투어</a></p>
-              <p><a href="#">블로그</a></p>
-              <p><a href="#">커뮤니티</a></p>
+              <a href="#"><p>국내여행지</p></a>
+              <a href="#"><p>해외여행지</p></a>
+              <a href="#"><p>추천투어</p></a>
+              <a href="#"><p>블로그</p></a>
+              <a href="#"><p>커뮤니티</p></a>
             </div><!-- dropwhere-cont -->
             </div> 
           </div><!-- dropwhere -->
           <div class="right">
-            <P><a href="#">회사소개</a></P>
-            <P><a href="#">공지사항</a></P>
-            <P><a href="#">내여행</a></P>
-            <P><a href="#">로그인</a></P>
+            <a href="#"><p>회사소개</p></a>
+            <a href="#"><p>공지사항</p></a>
+            <a href="#"><p>내여행</p></a>
+            <a href="#"><p>로그인</p></a>
           </div><!-- right -->
         </div><!-- top -->
         </header>
