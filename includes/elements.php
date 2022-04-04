@@ -98,6 +98,19 @@ function getProductList($max=0, $category, $search='') {
       </div>
     HTML;
   }
+
+  // TODO: 리스트가 없을 경우 처리
   
   return $productList;
+}
+
+// 입력된 코드의 상품 데이터를 반환
+function getProductData($itemcode) {
+  $fileList = glob(DATA.'item_*'.$itemcode.'.json');
+  $file = $fileList[0];
+  $productData = openJson($file);
+
+  // TODO: 데이터가 없을 경우 처리
+
+  return $productData;
 }
