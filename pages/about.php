@@ -1,4 +1,5 @@
 <?php // about.php
+$INFO['subtitle'] = '회사소개';
 
 $siteTitle = $INFO['title'];
 $siteDesc = $INFO['description'];

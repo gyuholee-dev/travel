@@ -5,6 +5,7 @@ $itemCode = $_REQUEST['itemcode'] ?? '';
 
 // 데이터 로드
 $data = getProductData($itemCode);
+$INFO['subtitle'] = $data['itemtitle'];
 
 $locations = explode(',', $data['location']);
 $locatons = "
