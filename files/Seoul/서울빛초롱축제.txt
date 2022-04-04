@@ -1,6 +1,6 @@
 itemtitle: 서울 빛초롱 페스티벌~! 
 category: 국내
-location: 서울시 서울구
+location: 서울특별시,종로구
 schedule: 2015-02-27~2015-03-21
 price: 19000원
 hashtag: #빛초롱축제 #빛초롱초롱 #사진찍기좋은곳

@@ -1,6 +1,6 @@
 itemtitle: 제주들불 페스티벌~! 
 category: 국내
-location: 제주시 제주로
+location: 제주특별자치도,제주시
 schedule: 2017-02-32~2017-03-29
 price: 15000원
 hashtag: #들불 #불이 활활 #좋은일이 가득하기를~

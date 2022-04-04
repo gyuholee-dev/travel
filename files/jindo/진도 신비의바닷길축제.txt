@@ -1,6 +1,6 @@
 itemtitle: 진도 신비의 바닷길 페스티벌~! 
 category: 국내
-location: 진도시 진도군
+location: 전라남도,진도군
 schedule: 2016-08-32~2016-09-21
 price: 12000원
 hashtag: #진도 #신비의 바닷길 #바다냄새

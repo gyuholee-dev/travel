@@ -28,7 +28,7 @@ $searchBox = renderElement(TPL.'searchBox.html', $searchBox_data);
 // 상품리스트 --------------------------------------------------
 
 // 프로덕트리스트
-$productList = getProductList($category, $search);
+$productList = getProductList(9, $category, $search);
 
 $productBox_data = [
   'title' => $category=='전체'?'전체 상품':$category.'투어 모든상품',

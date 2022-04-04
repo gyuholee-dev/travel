@@ -1,6 +1,6 @@
 itemtitle: 충주활옥동굴 페스티벌~! 
 category: 국내
-location: 충주로 충주시 우동
+location: 충청남도,충주시
 schedule: 2019-03-15~2022-03-21
 price: 40000원
 hashtag: #활옥동굴 #신비로움 #자연

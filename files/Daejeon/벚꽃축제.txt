@@ -1,15 +1,15 @@
 itemtitle: 대전벚꽃축제 페스티벌~! 
 category: 국내
-location: 대전시 대전구
+location: 대전광역시,동구
 schedule: 2018-03-29~2018-04-21
 price: 12000원
 hashtag: #벚꽃 #사랑하는사람과 함께 #추억만들기
-topimg: Daejeon/Daejeon6.jpg
-image1: Daejeon/Daejeon1.jpg
-image2: Daejeon/Daejeon2.jpg
-image3: Daejeon/Daejeon3.jpg
-image4: Daejeon/Daejeon4.jpg
-image5: Daejeon/Daejeon10.jpg
+topimg: daejeon/daejeon6.jpg
+image1: daejeon/daejeon1.jpg
+image2: daejeon/daejeon2.jpg
+image3: daejeon/daejeon3.jpg
+image4: daejeon/daejeon4.jpg
+image5: daejeon/daejeon10.jpg
 summary: [딱~!한번만오는 이벤트~!]대전벚꽃 페스티벌~! 
 포즈를 취해서 대전벚꽃 페스티벌블로그에 
 올려주시면 상품을 드립니다~! 
