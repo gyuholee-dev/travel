@@ -74,7 +74,6 @@ if (!$DBCONF) {
   } else {
     $fileList = glob(DATA.'travel_*.sql');
     foreach ($fileList as $file) {
-      $table = basename($file);
       if (!checkTable(basename($file))) {
         $dbLog = 'DB 테이블이 존재하지 않습니다.';
         break;
