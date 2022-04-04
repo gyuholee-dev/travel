@@ -19,6 +19,8 @@ $hashtags = "
   <p class='hash'>#$hashtags[2]</p>
 ";
 
+$flight = '대한항공 KE'.numStr(rand(1, 9999), 4);
+
 // 데이터 가공
 $content_data = [
   'itemtitle' => $data['itemtitle'],
@@ -35,6 +37,8 @@ $content_data = [
   'price' => $data['price'],
   'summary' => '<pre>'.$data['summary'].'</pre>',
   'description' => '<pre>'.$data['description'].'</pre>',
+  'flight' => $flight,
+  'destination' => $locations[0],
 ];
 
 // 랜더링 --------------------------------------------------
