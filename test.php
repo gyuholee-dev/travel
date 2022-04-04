@@ -13,3 +13,16 @@
 // echo basename(__FILE__);
 // echo basename(__DIR__);
 // basename(getcwd());
+
+function makeCode($max=32, $upper=false) {
+  $code = md5(time());
+  if ($max <= 32) {
+    $code = substr($code, 0, $max);
+  }
+  if ($upper) {
+    $code = strtoupper($code);
+  }
+  return $code;
+}
+
+echo makeCode(8, true);
