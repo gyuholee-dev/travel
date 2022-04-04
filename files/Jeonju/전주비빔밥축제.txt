@@ -1,6 +1,6 @@
 itemtitle: 전주비빔밥 페스티벌~! 
 category: 국내
-location: 전주시 전주로
+location: 전라북도,전주시
 schedule: 2019-07-19~2019-07-31
 price: 17000원
 hashtag: #비빔밥 #배가 든든~ #꿀맛
@@ -11,7 +11,7 @@ image3: jeonju/jeonju4.jpg
 image4: jeonju/jeonju7.jpg
 image5: jeonju/jeonju10.jpg
 summary: [딱~!한번만오는 이벤트~!]전주비빔밥 페스티벌~! 
-제주비빔밥을 만드신후에 전주비빔밥페스티벌 블로그에다가 
+전주비빔밥을 만드신후에 전주비빔밥페스티벌 블로그에다가 
 전주화이팅~!이라고 적으시고 
 전주페스티벌~!이라는 말과함께 사진이나 동영상을 찍어서 올려주시면 
 상품을 드립니다~! 

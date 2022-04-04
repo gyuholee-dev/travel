@@ -1,6 +1,6 @@
 itemtitle: 울산 불꽃페스티벌~! 
 category: 국내
-location: 울산시 울산구
+location: 울산광역시,중구
 schedule: 2016-03-14~2016-03-21
 price: 21000원
 hashtag: #불꽃 #다양한불꽃들이 가득~!  #반짝반짝
