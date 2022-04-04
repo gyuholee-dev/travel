@@ -4,4 +4,4 @@
 
 // 랜더링 --------------------------------------------------
 $content_data = [];
-$content .= renderElement(HTML.'top.html', $content_data);
+$content .= renderElement(HTML.'board.html', $content_data);
