@@ -1,0 +1,21 @@
+itemtitle: 울산 불꽃페스티벌~! 
+category: 국내
+location: 울산광역시,중구
+schedule: 2016-03-14~2016-03-21
+price: 21000원
+hashtag: #불꽃 #다양한불꽃들이 가득~!  #반짝반짝
+topimg: ulsan/ulsan7.jpg
+image1: ulsan/ulsan1.jpg
+image2: ulsan/ulsan3.jpg
+image3: ulsan/ulsan6.jpg
+image4: ulsan/ulsan8.jpg
+image5: ulsan/ulsan10.jpg
+summary: [딱~!한번만오는 이벤트~!]울산 불꽃페스티벌~! 
+사진과 동영상을 5장찍어서 울산 불꽃페스티벌 gmail.com에 
+회원가입하셔서 이벤트를 참여하시면 
+랜덤으로 상품을 뽑아서  
+상품을 드립니다~! 
+1등 울산 불꽃페스티벌 무료증정권  2등 문화상품권3장  
+3등 울산 불꽃 팝잇 
+description: 울산불꽃페스티벌 랜덤게임 가격:18000원, 
+울산 불꽃커플링 가격:21000원, 울산 불꽃축제불꽃이 가격:18000원

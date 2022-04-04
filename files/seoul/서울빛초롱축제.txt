@@ -1,0 +1,21 @@
+itemtitle: 서울 빛초롱 페스티벌~! 
+category: 국내
+location: 서울특별시,종로구
+schedule: 2015-02-27~2015-03-21
+price: 19000원
+hashtag: #빛초롱축제 #빛초롱초롱 #사진찍기좋은곳
+topimg: Soul/Soul4.jpg
+image1: Soul/Soul1.jpg
+image2: Soul/Soul3.jpg
+image3: Soul/Soul5.jpg
+image4: Soul/Soul7.jpg
+image5: Soul/Soul10.jpg
+summary: [딱~!한번만오는 이벤트~!]서울빛초롱 페스티벌~! 
+사진을 11장 찍어서 빛초롱 페스티벌에서 진행되고있는 
+이벤트직원에게 사진을 보여주시면 직원이 랜덤으로 상품을 뽑아서  
+상품을 드릴겁니다~! 
+1등 빛초롱축제 선물세트  2등 3만원 3등 빛초롱초롱자석 
+description: 서울 빛초롱페스티벌 미니어처 가격:16000원, 
+서울 빛초롱커플링 가격:20000원, 서울 빛초롱인형초롱이 가격:17000원
+
+
