@@ -12,18 +12,22 @@ header {
 
 #message {
   width: 100%;
+
   .log {
     padding: 5px 10px;
     background-color: gray;
     color: white;
     font-size: 0.9em;
     text-align: center;
+
     &.info {
       background-color: gray;
     }
+
     &.success {
       background-color: green;
     }
+
     &.error {
       background-color: red;
     }
@@ -42,15 +46,19 @@ header {
   max-width: 800px;
   height: initial;
   min-height: 150px;
+
   .search-top {
     .pp1 {
       border-bottom: 2px solid #aaa;
+
       &.active {
         color: #F26E62;
       }
+
       &:hover {
         border-bottom: 2px solid #F26E62;
       }
+
       >a {
         display: block;
         width: 100%;
@@ -58,6 +66,7 @@ header {
       }
     }
   }
+
   .table1 {
     .bt {
       border: none;
@@ -67,6 +76,7 @@ header {
       opacity: 70%;
       padding: 10px;
       border-radius: 10px;
+
       &:hover {
         cursor: pointer;
         transition: all 0.4s;
@@ -74,8 +84,10 @@ header {
       }
     }
   }
+
   .location {
     padding-bottom: 25px;
+
     ul::after,
     &::after {
       content: "";
@@ -83,9 +95,11 @@ header {
       width: 100%;
       clear: both;
     }
+
     ul>li:hover {
       cursor: pointer;
     }
+
     .emp {
       background-color: yellow;
     }
@@ -109,12 +123,14 @@ header {
   position: absolute;
   left: 0;
 }
+
 .topbox {
   display: flex;
   justify-content: center;
   position: relative;
   top: 0;
 }
+
 .intro-title {
   width: 640px;
   left: initial;
@@ -122,6 +138,7 @@ header {
   align-items: center;
   flex-direction: column;
 }
+
 .intro-company {
   left: initial;
 }
