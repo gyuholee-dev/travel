@@ -1,3 +1,7 @@
+header {
+  z-index: 9;
+}
+
 #message {
   width: 100%;
   .log {
@@ -71,3 +75,14 @@
     }
   }
 }
+
+.intro-img {
+  position: absolute;
+  left: 0;
+}
+.topbox {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 0;
+} 
