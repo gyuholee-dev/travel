@@ -1,6 +1,33 @@
-.box {
-  display: block;
-  width: 500px;
-  height: 500px;
-  background-color: red;
+.headerbox{
+    display: block;
+    width:1000px;
+    height:1000px;
+    background-color:lightpink;
+    align-items:center;
+    text-align:center
 }
+.table1{
+    width:66%;
+    text-align:center;
+    align-items:center;
+    border-collapse:collapse;
+    border-top:2px solid #999;
+    border-bottom:2px solid #999;
+    position:absolute;
+}
+
+.table1 tr>td{
+    padding:5px;
+    border-bottom:1px solid #999;
+}
+.table1 tr>th{
+    padding:5px;
+    border-bottom:1px solid #999;
+}
+
+
+
+
+
+
+
