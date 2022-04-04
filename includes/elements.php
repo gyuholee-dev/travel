@@ -13,6 +13,8 @@ function renderElement($template, $data=array()) {
 
 // 카테고리와 검색어에 따라 플레이스 데이터를 리스트로 반환
 function getPlaceList($category, $search='') {
+  global $DB;
+
   // 검색어가 없으면 리턴
   if ($search == '') {
     return false;
@@ -60,6 +62,7 @@ function getPlaceList($category, $search='') {
 
 // 카테고리와 검색어에 따라 상품 데이터를 리스트로 반환
 function getProductList($max=0, $category, $search='') {
+  global $DB;
 
   $fileList = glob(DATA.'item_*.json');
   rsort($fileList); // 최신순으로 정렬
@@ -106,6 +109,7 @@ function getProductList($max=0, $category, $search='') {
 
 // 입력된 코드의 상품 데이터를 반환
 function getProductData($itemcode) {
+  global $DB;
   $fileList = glob(DATA.'item_*'.$itemcode.'.json');
   $file = $fileList[0];
   $productData = openJson($file);
