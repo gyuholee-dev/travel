@@ -5,6 +5,7 @@ $itemCode = $_REQUEST['itemcode'] ?? '';
 
 // 데이터 로드
 $data = getProductData($itemCode);
+$INFO['subtitle'] = $data['itemtitle'];
 
 $locations = explode(',', $data['location']);
 $locatons = "
@@ -18,6 +19,8 @@ $hashtags = "
   <p class='hash'>#$hashtags[1]</p>
   <p class='hash'>#$hashtags[2]</p>
 ";
+
+$flight = '대한항공 KE'.numStr(rand(1, 9999), 4);
 
 // 데이터 가공
 $content_data = [
@@ -35,6 +38,8 @@ $content_data = [
   'price' => $data['price'],
   'summary' => '<pre>'.$data['summary'].'</pre>',
   'description' => '<pre>'.$data['description'].'</pre>',
+  'flight' => $flight,
+  'destination' => $locations[0],
 ];
 
 // 랜더링 --------------------------------------------------

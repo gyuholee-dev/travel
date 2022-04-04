@@ -1,3 +1,7 @@
+header {
+  z-index: 9;
+}
+
 #message {
   width: 100%;
   .log {
@@ -70,4 +74,38 @@
       background-color: yellow;
     }
   }
+}
+
+.detail-where {
+  // width: 630px;
+  height: 244px;
+}
+
+.d-where-info p {
+  line-height: 70px;
+}
+
+.detail-bottom-left {
+  line-height: 1.6;
+}
+
+.intro-img {
+  position: absolute;
+  left: 0;
+}
+.topbox {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 0;
+}
+.intro-title {
+  width: 640px;
+  left: initial;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.intro-company {
+  left: initial;
 }
