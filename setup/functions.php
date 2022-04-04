@@ -54,6 +54,7 @@ function makeCode($max=32, $upper=false) {
 // DB 함수 ------------------------------------------------
 
 // DB 로그인
+// 주의: mysqli_report(MYSQLI_REPORT_ALL) 설정 필요
 function loginDB($dbConfig, $log=false) {
   global $DB;
   global $MSG;
@@ -86,7 +87,7 @@ function selectDB($dbConfig, $log=false) {
     if ($log) {
       pushLog('DB 선택 성공', 'success');
     }
-    return true;
+    return $DB;
   } catch (Exception $e) {
     if ($log) {
       pushLog('DB 선택 실패: '.$e->getMessage(), 'error');
@@ -96,8 +97,8 @@ function selectDB($dbConfig, $log=false) {
 }
 
 
-// DB 접속 검사
-function checkDB($dbConfig, $log=false) {
+// DB 접속
+function connectDB($dbConfig, $log=false) {
   global $DB;
   global $MSG;
   foreach ($dbConfig as $key => $value) {
@@ -108,7 +109,7 @@ function checkDB($dbConfig, $log=false) {
     if ($log) {
       pushLog('DB 접속 성공', 'success');
     }
-    return true;
+    return $DB;
   } catch (Exception $e) {
     if ($log) {
       pushLog('DB 접속 실패: '.$e->getMessage(), 'error');
@@ -117,9 +118,9 @@ function checkDB($dbConfig, $log=false) {
   }
 }
 
-// DB 접속
-function connectDB($dbConfig, $log=false) {
-  return checkDB($dbConfig, $log);
+// DB 검사
+function checkDB($dbConfig, $log=false) {
+  return connectDB($dbConfig, $log);
 }
 
 // DB 생성

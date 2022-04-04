@@ -1,14 +1,18 @@
+.bodycolor {
+  background-image: linear-gradient(rgb(255, 240, 240), white);
+}
+
 header {
   z-index: 9;
   // display: inline-block;
+  .dropdown-btn {
+    width: 142px;
+    // background-color: #3a494c;
+  }
 }
 
 main {
   position: relative;
-}
-
-.dropdown-btn {
-  width: 142px;
 }
 
 .table1 input[type=text]:hover {
@@ -42,6 +46,7 @@ main {
 .search {
   height: initial;
   margin-bottom: 25px;
+  background-color: initial;
 }
 
 #searchBox {
@@ -109,6 +114,10 @@ main {
       background-color: yellow;
     }
   }
+}
+
+.second-right {
+  background-color: white;
 }
 
 .detail-where {

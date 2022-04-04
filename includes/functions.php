@@ -35,6 +35,9 @@ function fileExists($file) {
 
 // json 파일 오픈
 function openJson($file) {
+  if (!fileExists($file)) {
+    return false;
+  }
   $json = file_get_contents($file);
   $json = json_decode($json, true);
   return $json;
@@ -95,11 +98,33 @@ function connectDB($dbConfig, $log=false) {
     if ($log) {
       pushLog('DB 접속 성공', 'success');
     }
-    return true;
+    return $DB;
   } catch (Exception $e) {
     if ($log) {
       pushLog('DB 접속 실패: '.$e->getMessage(), 'error');
     }
     return false;
   }
+}
+
+// 테이블 검사
+function checkTable($table, $log=false) {
+  global $DB;
+  global $MSG;
+  mysqli_report(MYSQLI_REPORT_STRICT);
+  
+  $sql = "SHOW TABLES LIKE '$table'";
+  $rows = mysqli_num_rows(mysqli_query($DB, $sql));
+  mysqli_report(MYSQLI_REPORT_ALL);
+
+  if ($rows == 0) {
+    if ($log) {
+      pushLog("테이블 없음: $table", 'success');
+    }
+    return false;
+  }
+  if ($log) {
+    pushLog("테이블 있음: $table", 'error');
+  }
+  return true;
 }

@@ -1,13 +1,17 @@
+.bodycolor {
+  background-image: linear-gradient(#fff0f0, white);
+}
+
 header {
   z-index: 9;
 }
 
-main {
-  position: relative;
+header .dropdown-btn {
+  width: 142px;
 }
 
-.dropdown-btn {
-  width: 142px;
+main {
+  position: relative;
 }
 
 .table1 input[type=text]:hover {
@@ -41,6 +45,7 @@ main {
 .search {
   height: initial;
   margin-bottom: 25px;
+  background-color: initial;
 }
 
 #searchBox {
@@ -102,6 +107,10 @@ main {
 
 #searchBox .location .emp {
   background-color: yellow;
+}
+
+.second-right {
+  background-color: white;
 }
 
 .detail-where {
