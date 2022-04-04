@@ -76,7 +76,8 @@ function getProductList($max=0, $category, $search='') {
   global $DB;
 
   $fileList = glob(DATA.'item_*.json');
-  rsort($fileList); // 최신순으로 정렬
+  // rsort($fileList); // 최신순으로 정렬
+  shuffle($fileList); // 랜덤으로 정렬
   if ($max > 0) { // 최대 개수만큼만 리턴
     $fileList = array_slice($fileList, 0, $max);
   }
