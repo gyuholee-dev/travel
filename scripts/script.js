@@ -27,7 +27,7 @@ $(function(){
 });
 
 //디테일이미지스왑
-$(function(){
+$(function(){ 
   $(".dsum1").click(function(){
     $(".detail-img-bottom1").css("display","block");
     $(".detail-img-bottom2").css("display","none");

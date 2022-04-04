@@ -11,7 +11,8 @@ header{width: 100%; min-width: 960px; height: 60px;margin: auto;
 header::after {content: "";
     display: block;
     clear: both;}
-.top{float: left; opacity: 100%; position: fixed;}
+.top{ opacity: 100%; position: absolute;background-color: #fff;top: 0;
+     z-index: 999;}
 .logo{width: 300px;height: 60px;padding: 10px 20px;padding-left: 40px; float: left;}
 .logo img{width: 300px; height: auto;}
 .dropwhere{width: 100px;height: 60px;float: left;}
@@ -206,11 +207,11 @@ header::after {content: "";
 .detail-imgs{width: 960px; height: 700px;} 
 .detail-imgs-top{width: 960px; height: 190px;display: flex;
     flex-wrap: wrap;float: left;}
-.d-sumnails{width: 160px; height: 160px; margin: 15px; overflow: hidden;}
+.d-sumnails{width: 160px; height: 160px;}
 .d-sumnails:hover{filter: grayscale(100%);opacity: 80%;cursor: pointer;transition: all 0.4s;}
-.dsum1, .dsum2, .dsum3, .dsum4, .dsum5{width: 160px;height: 160px;}
+.dsum1, .dsum2, .dsum3, .dsum4, .dsum5{width: 160px;height: 160px;margin: 15px; overflow: hidden;}
 
-.dsum1 img, .dsum2 img, .dsum3 img, .dsum4 img, .dsum5 img{width: auto; height: 100%;}
+.d-sumnails img{width: auto; height: 100%;}s
 .detail-img-bottom1{display: block; width: 920px; height: 500px;overflow: hidden;margin: 20px;}
 .detail-img-bottom2, .detail-img-bottom3, .detail-img-bottom4, 
 .detail-img-bottom5{display: none; width: 920px; height: 500px;overflow: hidden;margin: 20px;}
@@ -285,8 +286,56 @@ header::after {content: "";
 .goods-code p:first-child{float: left;}
 .goods-code p:nth-child(2){border-bottom: 1px solid #999;margin-bottom: 10px;}
 
-
 /* detail.html css 끝 */
+/* intro.php css 시작 */
+.topbox{position: absolute;top: 80px;width: 960px;height: 700px;
+    text-align: center;}
+.intro-img{width: 100%;height: 700px;
+    filter: brightness(30%);position: relative;}
+.intro-img img{width: 100%;height: auto;min-width: 960px;}
+.intro-title{width: 500px;height: 500px;position: absolute;
+    top: 50px;left: 230px;line-height: 100px;}
+.intro-title h3{color: #fff;font-size: 3em;}
+.intro-title h1{color: #fff;font-size: 4em;}
+.intro-title h4{color: #fff;font-size: 2em;}
+.intro-company{border: 2px solid #fff; width: 100px;height: 30px;
+border-radius: 25px; position: absolute; left: 200px;bottom: 100px;}
+.intro-company p{color: #fff;font-size: 1.2em;line-height: 30px;}
+.intro-company:hover{background-color: rgba(230, 230, 230,0.5);}
+
+.business-t{width: 960px;height: 50px;}
+.intro-line{width: 200px;height: 50px;border-bottom: 1px solid #999; 
+    line-height: 70px; margin: auto;margin-bottom: 30px;}
+.intro-line p{font-weight: bold; }
+
+.business1-box1{width: 960px;height: 200px;display: flex; flex-wrap: wrap;justify-content: space-between;
+    align-items: center; margin: 50px 0 50px 0 ; }
+.intro-line1{width: 200px;height: 40px;border-bottom: 1px solid #999;
+    float: right;}
+.intro-line1 p{font-weight: bold;line-height: 40px;text-align: right;}    
+.business-font1{width: 500px;height: 150px;text-align: right;
+   }
+.intro-line2{width: 200px;height: 40px;border-bottom: 1px solid #999;
+    float: left;}
+.intro-line2 p{font-weight: bold;line-height: 40px;text-align: left;}    
+.business-font2{width: 500px;height: 150px;text-align: left;
+   }   
+.business-img{width: 400px;height: 200px; margin: 0 30px;overflow: hidden;}
+.business-img img{width: 100%;height: auto;}
+
+.intro-round-box{width: 960px;height: 150px;display: flex; flex-wrap: wrap;justify-content: space-between;
+    align-items: center;margin-bottom: 50px;}
+.i-r-b{width: 150px;height: 150px;border-radius: 75px;background-color: #F26E62;
+   position: relative;}
+.i-r-b p{position: relative;top: 20px;color: #fff;font-size: 1.1em;}
+.intro-icon{position: relative;top: 35px; left: 50px; width: 50px;height: auto;
+          overflow: hidden;}
+.intro-icon img{width: 50px;height: auto;}
+
+.contribution{width: 960px;height: 150px;margin: 50px 0 ;}
+.contribution p{line-height: 30px;}
+
+/* intro.php css 끝 */
 
 footer{width: 100%;height: 150px;margin: auto;min-width: 960px;
     color: #999; border-top: 1px solid #999; position: relative; }
