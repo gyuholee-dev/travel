@@ -123,7 +123,7 @@
               </div>
               <div class="t-icon">
               <div class="t-img1">
-                <img src="images/icons/house.png" ></div>
+                <img src="images/icons/house.png" class="house"></div>
                 <P class="house">산꼴라이프</P>
               </div>
             </div><!-- theme-icons -->
