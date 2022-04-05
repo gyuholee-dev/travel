@@ -3,6 +3,7 @@
 require_once 'includes/functions.php';
 require_once 'includes/elements.php';
 ini_set('display_errors', 'On');
+ini_set('session.use_strict_mode', 0);
 mysqli_report(MYSQLI_REPORT_ALL);
 session_start();
 
@@ -96,11 +97,15 @@ unset($dbConfigFile, $dbLog);
 // 유저 초기화 ------------------------------------------------
 
 // 로그인 체크
-if (isset($_SESSION['key'])) {
-  if (isset($_COOKIE['key']) && $_SESSION['key'] == $_COOKIE['key']) {
-    $USER = $_SESSION['key'];
-  } else {
-    session_destroy();
-    setcookie('key', '', time()-60);
+if (isset($_SESSION['USER']) && isset($_COOKIE['USER'])) {
+  // 세션 유저 키와 쿠키 유저 키를 비교하여 같을 경우에 로그인 인정
+  if ($_SESSION['USER']['key'] == json_decode($_COOKIE['USER']['key'])) {
+    $USER = $_SESSION['USER'];
   }
+}
+if (!$USER) { // 로그인 안되어 있을 경우
+  if (isset($_SESSION['USER'])) {
+    unset($_SESSION['USER']);
+  }
+  unset($_COOKIE['USER']);
 }

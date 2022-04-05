@@ -263,8 +263,8 @@ section.member {
     }
     td.label {
       text-align: center;
-      vertical-align: center;
-      padding: 5px;
+      vertical-align: middle;
+      padding: 10px 5px;
       position: relative;
       &::after {
         content: "";
@@ -315,7 +315,7 @@ section.member {
   .buttons {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     >*:not(:last-child) {
       margin-right: 10px;
     }

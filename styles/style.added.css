@@ -245,8 +245,8 @@ section.member input[type=radio], section.member input[type=checkbox] {
 
 #inputbox table td.label {
   text-align: center;
-  vertical-align: center;
-  padding: 5px;
+  vertical-align: middle;
+  padding: 10px 5px;
   position: relative;
 }
 
@@ -305,7 +305,7 @@ section.member input[type=radio], section.member input[type=checkbox] {
 #inputbox .buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 #inputbox .buttons > *:not(:last-child) {

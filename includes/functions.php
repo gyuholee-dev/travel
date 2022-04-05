@@ -62,10 +62,45 @@ function makeCode($max=32, $upper=false) {
   return $code;
 }
 
+// 유저기능 함수 ------------------------------------------------
+
+// 로그인 처리
+// 로그인은 별도 함수로 만들지 않음
+function setUserData($userData) {
+  global $USER;
+  $USER = array(
+    'userid' => $userData['userid'],
+    'nickname' => $userData['nickname'],
+    'groups' => $userData['groups'],
+    'key' => makeCode(),
+  );
+  setcookie('USER', json_encode($USER), time()+3600);
+  return true;
+}
+
+// 로그아웃
+function logout() {
+  unsetUserData();
+  pushLog('로그아웃되었습니다.', 'info');
+  $_SESSION['MSG'] = $MSG;
+  header('Location: main.php');
+}
+
+// 로그아웃 처리
+function unsetUserData() {
+  global $USER;
+  $USER = null;
+  unset($_SESSION['USER']);
+  unset($_COOKIE['USER']);
+  return true;
+}
+
+
 // DB 함수 ------------------------------------------------
 
 // AES 암호화
 function AES_ENCRYPT($plaintext, $key) {
+  // TODO: PHP 암호화 라이브러리를 통해 암호화 구현
   global $DB;
   $sql = "SELECT AES_ENCRYPT('$plaintext', '$key') AS ciphertext ";
   $result = mysqli_query($DB, $sql);
@@ -75,6 +110,7 @@ function AES_ENCRYPT($plaintext, $key) {
 
 // AES 암호해독
 function AES_DECRYPT($ciphertext_raw, $key) {
+  // TODO: PHP 암호화 라이브러리를 통해 해독 구현
   global $DB;
   $sql = "SELECT AES_DECRYPT('$ciphertext_raw', '$key') AS plaintext ";
   $result = mysqli_query($DB, $sql);
