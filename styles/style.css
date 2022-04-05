@@ -476,7 +476,7 @@ border-radius: 25px; position: absolute; left: 200px;bottom: 100px;}
 .intro-line2 p{font-weight: bold;line-height: 40px;text-align: left;}    
 .business-font2{width: 500px;height: 150px;text-align: left;
    }   
-.business-img{width: 400px;height: 200px; margin: 0 30px;overflow: hidden;}
+.business-img{width: 400px;height: 200px; margin: 30px;overflow: hidden;}
 .business-img img{width: 100%;height: auto;}
 
 .intro-round-box{width: 960px;height: 150px;display: flex; flex-wrap: wrap;justify-content: space-between;
