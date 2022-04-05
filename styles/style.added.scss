@@ -346,3 +346,32 @@ section.member {
     }
   }
 }
+
+section.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 600px;
+}
+
+section.mypage {
+  margin: 25px auto !important;
+  .p-left {
+    padding-top: 50px;
+  }
+  .p-right {
+    padding-top: 65px;
+    width: 600px;
+    padding-right: 25px;
+  }
+  .prof-img {
+    margin: 0 50px;
+  }
+  .booking-table,
+  .personal-qna1 {
+    width: 100%;
+    th, td {
+      text-align: center;
+    }
+  }
+}

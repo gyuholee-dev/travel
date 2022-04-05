@@ -342,3 +342,39 @@ section.member input[type=radio], section.member input[type=checkbox] {
 #inputbox .buttons .hidden {
   display: none;
 }
+
+section.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 600px;
+}
+
+section.mypage {
+  margin: 25px auto !important;
+}
+
+section.mypage .p-left {
+  padding-top: 50px;
+}
+
+section.mypage .p-right {
+  padding-top: 65px;
+  width: 600px;
+  padding-right: 25px;
+}
+
+section.mypage .prof-img {
+  margin: 0 50px;
+}
+
+section.mypage .booking-table,
+section.mypage .personal-qna1 {
+  width: 100%;
+}
+
+section.mypage .booking-table th, section.mypage .booking-table td,
+section.mypage .personal-qna1 th,
+section.mypage .personal-qna1 td {
+  text-align: center;
+}

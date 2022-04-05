@@ -23,6 +23,7 @@ $INFO['subtitle'] = $boardTitle;
 
 // 랜더링 --------------------------------------------------
 $content_data = [
+  'action' => $ACT,
   'boardTitle' => $boardTitle,
   'category' => $category,
 ];

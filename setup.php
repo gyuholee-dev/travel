@@ -31,9 +31,9 @@ if (!$USER) {
       break;
   
     // 데이터 입력
-    case 'data':
-      include 'setup/_data.php';
-      break;
+    // case 'data':
+    //   include 'setup/_data.php';
+    //   break;
     
     default:
       header('Location: setup.php?action=db');
@@ -59,7 +59,7 @@ if ($USER && $ACT != 'login') {
       <li class="$active[admin] $disabled">
         <a href="setup.php?action=admin">관리자 계정</a>
       </li>
-      <li class="$active[data] $disabled">
+      <li class="$active[data] disabled">
         <a href="setup.php?action=data">데이터 입력</a>
       </li>
       <li class="$disabled">
