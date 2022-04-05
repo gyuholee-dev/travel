@@ -27,21 +27,20 @@ $mainEvent_data = [
 
 $mainEventBox = renderElement(TPL.'mainEventBox.html', $mainEvent_data);
 
-// 상품리스트 --------------------------------------------------
+// 테마리스트 --------------------------------------------------
 
-// 프로덕트리스트
-// $productList = getProductList(3);
-
-// $productBox_data = [
-//   'listTitle' => $listTitle,
-//   'productList' => $productList
-// ];
-// $productBox = renderElement(TPL.'productBox.html', $productBox_data);
+$themeList = getProductList(9, '', '', true);
+$themeBox_data = array();
+foreach ($themeList as $key => $value) {
+  $index = 'themeList'.$key;
+  $themeBox_data[$index] = $value;
+}
+$themeBox = renderElement(TPL.'themeBox.html', $themeBox_data);
 
 // 랜더링 --------------------------------------------------
 $content_data = [
   'searchBox' => $searchBox,
   'mainEventBox' => $mainEventBox,
-  // 'productList' => $productList,
+  'themeBox' => $themeBox,
 ];
 $content .= renderElement(HTML.'top.html', $content_data);
