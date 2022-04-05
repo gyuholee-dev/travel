@@ -80,8 +80,8 @@ function setUserData($userData) {
 }
 
 // 로그아웃
-// FIXME: 세션 리셋으로 메시지가 표시안되는 문제
 function logout() {
+  global $MSG;
   unsetUserData();
   pushLog('로그아웃되었습니다.', 'info');
   $_SESSION['MSG'] = $MSG;

@@ -10,6 +10,30 @@ header .dropdown-btn {
   width: 142px;
 }
 
+header .dropwhere-cont p:hover {
+  transition: none;
+}
+
+header .right {
+  display: flex;
+  padding-right: 25px;
+}
+
+header .right a {
+  height: 40px;
+  line-height: 40px;
+}
+
+header .right p {
+  width: 100px;
+  float: none;
+  text-align: center;
+}
+
+header .right p:hover {
+  transition: none;
+}
+
 main {
   position: relative;
 }

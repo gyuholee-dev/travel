@@ -9,6 +9,25 @@ header {
     width: 142px;
     // background-color: #3a494c;
   }
+  .dropwhere-cont p:hover {
+    transition: none;
+  }
+  .right {
+    display: flex;
+    padding-right: 25px;
+    a {
+      height: 40px;
+      line-height: 40px;
+    }
+    p {
+      width: 100px;
+      float: none;
+      text-align: center;
+      &:hover {
+        transition: none;
+      }
+    }
+  }
 }
 
 main {

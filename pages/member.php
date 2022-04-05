@@ -6,10 +6,6 @@ action=login: 로그인
        modify: 회원정보 수정
        delete: 회원탈퇴
 */
-// 로그인 체크
-if ($USER) {
-
-}
 // 리퀘스트
 $ACT = $_REQUEST['action'] ?? 'login';
 $DO = $_REQUEST['do'] ?? '';

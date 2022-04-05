@@ -27,11 +27,15 @@ $message = printLog();
 // 헤더
 $userLink = ['login', '로그인'];
 if ($USER) {
-  $userLink = ['logout', '로그아웃'];
+  $userLink = '<a href="?page=mypage"><p>내여행</p></a>';
+  $loginLink = '<a href="?page=member&action=logout"><p>로그아웃</p></a>';
+} else {
+  $userLink = '<a href="?page=member&action=resigter"><p>회원가입</p></a>';
+  $loginLink = '<a href="?page=member&action=login"><p>로그인</p></a>';
 }
 $header_data = [
-  'userLink0' => $userLink[0],
-  'userLink1' => $userLink[1],
+  'userLink' => $userLink,
+  'loginLink' => $loginLink,
 ];
 $header = renderElement(TPL.'header.html', $header_data);
 
