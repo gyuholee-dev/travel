@@ -1,49 +1,14 @@
 <?php // member.php
+/*
+action=login
+       // logout
+       resigter
+       modify
+       delete
+*/
 // 리퀘스트
 $ACT = $_REQUEST['action'] ?? 'login';
 $DO = $_REQUEST['do'] ?? '';
-
-// 로그인 체크
-/* if (!$USER && $ACT != 'login') {
-  $ACT = 'login';
-  header('Location: ?page=member&action='.$ACT);
-} */
-
-// 포스트 처리
-if (isset($_POST['confirm'])) {
-  $ACT = $_POST['action'];
-  $DO = $_POST['do'];
-
-
-}
-
-// 액션에 따라
-/* switch ($ACT) {
-  case 'login':
-    $pageTitle = '로그인';
-    
-    break;
-
-  case 'logout':
-    $pageTitle = '로그아웃';
-    break;
-  
-  case 'join':
-    $pageTitle = '회원가입';
-    break;
-
-  case 'modify':
-    $pageTitle = '회원정보수정';
-    break;
-
-  case 'delete':
-    $pageTitle = '회원탈퇴';
-    break;
-
-  case 'mypage':
-    $pageTitle = '예약조회';
-    break;
-} */
 
 $pageTitle = '';
 $memberBox = '';
@@ -66,7 +31,6 @@ if ($ACT == 'login') {
           </tr>
         </table>
         <div class="buttons">
-          <input type="hidden" name="action" value="$ACT">
           <input type="hidden" name="do" value="login">
           <input class="btn" type="submit" name="confirm" value="로그인">
           <input class="btn" type="button" value="회원가입" 
@@ -132,6 +96,7 @@ if ($ACT == 'login') {
         
         </table>
         <div class="buttons">
+          <input type="hidden" name="do" value="join">
           <label><input type="checkbox" name="agree">약관동의</label>
           <input class="btn" type="submit" name="confirm" value="회원가입">
         </div>
