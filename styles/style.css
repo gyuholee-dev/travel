@@ -45,7 +45,9 @@ header::after {content: "";
 #bodycolor::after {content: "";
     display: block;
     clear: both;}
-#content{width: 960px; height: auto;margin: auto;text-align: center;}  
+#content{width: 960px; height: auto;
+    position: relative;
+    margin: auto;text-align: center;}  
 .search{width: 960px; height: 180px; text-align: center;z-index: 999;
     margin: auto;padding-top: 30px;
     background-color: rgb(255, 240, 240);}
@@ -516,7 +518,43 @@ border-radius: 25px; position: absolute; left: 200px;bottom: 100px;}
     cursor: pointer;
     border: 3px solid #F26E62;color: #F26E62;}
 /* event html css끝 */
+/* personalinfo html css 시작 */
 
+.p-left{height: 700px;
+    width: 300px;background-color: #fff;}
+.prof-img{width: 200px;height: 200px;border-radius: 100px;
+overflow: hidden;margin: 50px 50px 0 50px;}
+.prof-img img {width: 100%;height: 100%;}
+.prof-name {width: 300px;height: 50px;text-align: center;
+   margin: 20px 0;}
+.prof-name p{width: 100px; border-bottom: 1px solid #999;
+           margin-left: 90px;padding: 10px;}
+.prof-info{width: 250px;height: 300px;margin-left: 20px;}
+.info-table{text-align: left;}
+.info-table tr>th:last-child{margin-top: 10px;}
+.info-table tr>td{padding: 10px;}
+.info-table input[type=button]{text-align: center;margin: 20px 70px;
+padding: 5px; border-radius: 5px; border: none;
+color: white;background-color: #F26E62;}
+.info-table input[type=button]:hover{cursor: pointer;
+    font-size: 1.1em;transition: all 0.5s;}
+
+.p-right{position: absolute;right: 0;top: 0;
+    width: 630px;height: 700px;float: left;}
+.booking{width: 200px;height: 50px;}
+.book-tilte{text-align: left;border-left: 5px solid #999;}
+.booking-table{margin-bottom: 50px;border-bottom: 1px solid #999;}
+.booking-table tr>th{padding: 5px 20px;
+background-color: #fff;}
+.booking-table tr>td{padding: 5px 20px;}
+
+.personal-qna{width: 200px;height: 50px;}
+.qna-title{text-align: left;border-left: 5px solid #999;}
+.personal-qna1{margin-bottom: 50px;border-bottom: 1px solid #999;}
+.personal-qna1 tr>th{padding: 5px 20px;
+    background-color: #fff;}
+.personal-qna1 tr>td{padding: 5px 20px;}
+/* personalinfo html css 끝 */
 footer{width: 100%;height: 150px;margin: auto;min-width: 960px;
     color: #999; border-top: 1px solid #999; position: relative; }
 
