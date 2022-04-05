@@ -72,7 +72,7 @@ function getPlaceList($category, $search='') {
 }
 
 // 카테고리와 검색어에 따라 상품 데이터를 리스트로 반환
-function getProductList($max=0, $category, $search='') {
+function getProductList($max=0, $category, $search='', $useArray=false) {
   global $DB;
 
   $fileList = glob(DATA.'item_*.json');
@@ -91,7 +91,8 @@ function getProductList($max=0, $category, $search='') {
   }
   // print_r($productData);
 
-  $productList = '';
+  $productList = array();
+  $i = 0;
   foreach ($productData as $key => $product) {
     $url = "?page=product&itemcode=$key";
     $topImg = FILE.$product['topimg'];
@@ -99,8 +100,8 @@ function getProductList($max=0, $category, $search='') {
     $price = number_format($product['price']).'원 부터~';
     $hashTag = explode(',', $product['hashtag']);
 
-    $productList .= <<<HTML
-      <div class="t-images1">
+    $productList[$i] = <<<HTML
+      <div class="t-images">
         <a href="$url">
           <div class="t-img">
             <img src="$topImg"></div>
@@ -112,11 +113,16 @@ function getProductList($max=0, $category, $search='') {
         </a>
       </div>
     HTML;
+    $i++;
   }
 
   // TODO: 리스트가 없을 경우 처리
+  if ($useArray) {
+    return $productList;
+  } else {
+    return implode('', $productList);
+  }
   
-  return $productList;
 }
 
 // 입력된 코드의 상품 데이터를 반환
