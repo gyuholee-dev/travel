@@ -74,11 +74,13 @@ function setUserData($userData) {
     'groups' => $userData['groups'],
     'key' => makeCode(),
   );
+  $_SESSION['USER'] = $USER;
   setcookie('USER', json_encode($USER), time()+3600);
   return true;
 }
 
 // 로그아웃
+// FIXME: 세션 리셋으로 메시지가 표시안되는 문제
 function logout() {
   unsetUserData();
   pushLog('로그아웃되었습니다.', 'info');
@@ -91,7 +93,7 @@ function unsetUserData() {
   global $USER;
   $USER = null;
   unset($_SESSION['USER']);
-  unset($_COOKIE['USER']);
+  setcookie('USER', '', time()-3600);
   return true;
 }
 

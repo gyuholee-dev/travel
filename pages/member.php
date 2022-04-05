@@ -1,7 +1,7 @@
 <?php // member.php
 /* 액션 일람
 action=login: 로그인
-       // logout: 로그아웃, 함수로 처리
+       logout: 로그아웃
        resigter: 회원가입
        modify: 회원정보 수정
        delete: 회원탈퇴
@@ -24,13 +24,15 @@ $memberBox = '';
 if ($ACT == 'login') {
   include PAGE.'_login.php';
 
+} elseif ($ACT == 'logout') {
+  logout();
+
 } elseif ($ACT == 'resigter' || $ACT == 'modify') {
   include PAGE.'_resigter.php';
-
+  
 } elseif ($ACT == 'error') {
   $pageTitle = '오류';
-
-  
+  include PAGE.'_error.php';
 }
 
 

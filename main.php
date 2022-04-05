@@ -25,7 +25,14 @@ $head = renderElement(TPL.'head.html', $head_data);
 $message = printLog();
 
 // 헤더
-$header_data = [];
+$userLink = ['login', '로그인'];
+if ($USER) {
+  $userLink = ['logout', '로그아웃'];
+}
+$header_data = [
+  'userLink0' => $userLink[0],
+  'userLink1' => $userLink[1],
+];
 $header = renderElement(TPL.'header.html', $header_data);
 
 // 푸터

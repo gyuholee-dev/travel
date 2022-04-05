@@ -99,7 +99,7 @@ unset($dbConfigFile, $dbLog);
 // 로그인 체크
 if (isset($_SESSION['USER']) && isset($_COOKIE['USER'])) {
   // 세션 유저 키와 쿠키 유저 키를 비교하여 같을 경우에 로그인 인정
-  if ($_SESSION['USER']['key'] == json_decode($_COOKIE['USER']['key'])) {
+  if ($_SESSION['USER']['key'] == json_decode($_COOKIE['USER'], true)['key']) {
     $USER = $_SESSION['USER'];
   }
 }
@@ -107,5 +107,5 @@ if (!$USER) { // 로그인 안되어 있을 경우
   if (isset($_SESSION['USER'])) {
     unset($_SESSION['USER']);
   }
-  unset($_COOKIE['USER']);
+  setcookie('USER', '', time()-3600);
 }
