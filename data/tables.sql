@@ -84,7 +84,7 @@ CREATE TABLE travel_member (
   phone CHAR(13),
   address VARCHAR(120),
   avatar VARCHAR(120),
-  pgroup CHAR(10) DEFAULT 'user',
+  groups CHAR(10) DEFAULT 'user',
   PRIMARY KEY (userid)
 );
 
