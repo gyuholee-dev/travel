@@ -24,6 +24,11 @@ if (!$USER) {
     case 'table':
       include 'setup/_table.php';
       break;
+
+    // 관리자 계정
+    case 'admin':
+      include 'setup/_admin.php';
+      break;
   
     // 데이터 입력
     case 'data':
@@ -40,7 +45,7 @@ $message = printLog();
 
 // 메뉴
 if ($USER && $ACT != 'login') {
-  $active = ['db'=>'','table'=>'','data'=>''];
+  $active = ['db'=>'','table'=>'','admin'=>'','data'=>''];
   $active[$ACT] = 'active';
   $disabled = checkDB($DBCONF) ? '' : 'disabled';
   $nav = <<<HTML
@@ -50,6 +55,9 @@ if ($USER && $ACT != 'login') {
       </li>
       <li class="$active[table] $disabled">
         <a href="setup.php?action=table">테이블 생성</a>
+      </li>
+      <li class="$active[admin] $disabled">
+        <a href="setup.php?action=admin">관리자 계정</a>
       </li>
       <li class="$active[data] $disabled">
         <a href="setup.php?action=data">데이터 입력</a>
