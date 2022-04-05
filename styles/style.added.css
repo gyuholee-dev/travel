@@ -180,3 +180,134 @@ main {
 .intro-company {
   left: initial;
 }
+
+section.member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 600px;
+}
+
+section.member .btn {
+  font-size: 0.95em;
+  padding: 3px;
+  min-width: 80px;
+}
+
+section.member .btn:hover {
+  cursor: pointer;
+}
+
+section.member input[type=radio], section.member input[type=checkbox] {
+  margin-right: 5px;
+}
+
+#memberbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-top: 25px;
+}
+
+#memberbox.login {
+  margin-top: 80px;
+}
+
+#memberbox .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#memberbox .title.red {
+  color: red;
+}
+
+#memberbox .box p {
+  padding: 0 5px;
+  margin-bottom: 10px;
+}
+
+#memberbox table {
+  margin-bottom: 15px;
+}
+
+#memberbox table th, #memberbox table td {
+  padding: 2px 5px;
+  white-space: nowrap;
+}
+
+#memberbox table td.label {
+  text-align: center;
+  vertical-align: center;
+  padding: 5px;
+  position: relative;
+}
+
+#memberbox table td.label::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  width: 100%;
+  background-color: #aaa;
+  z-index: 0;
+}
+
+#memberbox table td.label span {
+  background-color: white;
+  padding: 0 5px;
+  position: relative;
+  z-index: 1;
+}
+
+#memberbox table input {
+  height: 30px;
+  min-width: 200px;
+  padding: 3px;
+  border: 1px solid #808080;
+  border-radius: 3px;
+}
+
+#memberbox table input[readonly] {
+  background-color: #eee;
+}
+
+#memberbox table input[type=file] {
+  height: 32px;
+  min-width: initial;
+  width: 200px;
+}
+
+#memberbox table input.btn.small {
+  font-size: 0.9em;
+  height: 24px;
+  min-width: initial;
+  width: 50px;
+  margin-left: -58px;
+}
+
+#memberbox table input.btn.small:hover {
+  background-color: #ddd;
+}
+
+#memberbox table input.btn.small.hide {
+  display: none;
+}
+
+#memberbox .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#memberbox .buttons > *:not(:last-child) {
+  margin-right: 10px;
+}
