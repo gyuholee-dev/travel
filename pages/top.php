@@ -27,6 +27,12 @@ $mainEvent_data = [
 
 $mainEventBox = renderElement(TPL.'mainEventBox.html', $mainEvent_data);
 
+// 프로모션 --------------------------------------------------
+
+// 일단 랜덤 출력
+// 내용은 한가지로 30% 세일, 최대 5% 적립 등...
+
+
 // 테마리스트 --------------------------------------------------
 
 $themeList = getProductList(9, '', '', true);
