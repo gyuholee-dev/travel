@@ -43,6 +43,10 @@ foreach ($themeList as $key => $value) {
 }
 $themeBox = renderElement(TPL.'themeBox.html', $themeBox_data);
 
+// 여행후기 --------------------------------------------------
+
+// 상품 페이지의 리플 섹션으로 연결
+
 // 랜더링 --------------------------------------------------
 $content_data = [
   'searchBox' => $searchBox,
