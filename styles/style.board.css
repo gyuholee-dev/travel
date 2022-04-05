@@ -5,20 +5,28 @@
     text-align:center;
     align-items:center;
 }
-.table1{
+.tableboard{
     width:600px;
     border-collapse:collapse;
     border-top:2px solid #999;
     border-bottom:2px solid #999;
 }
-.table1 tr>th{
+.tableboard tr>th{
     padding:5px;
     border-bottom:1px solid #999;
     text-align:center;
 }
-.table1 tr>td{
+.tableboard tr>td{
     padding:5px;
     border-bottom:1px solid #999;
     text-align:center;
 }
+.change .number{
+    width:100%;
+    height:initial;
+}
+.change{
+    width:100%;
+    display:flex;
 
+}
