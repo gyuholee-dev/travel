@@ -31,7 +31,7 @@ if (isset($_POST['confirm'])) {
 $memberBox = <<<HTML
   <div id="inputbox" class="$ACT">
     <div class="title">$pageTitle</div>
-    <form method="post" action="" autocomplete="off">
+    <form name="$ACT" method="post" action="" autocomplete="off">
       <table>
         <tr>
           <td>아이디</td>

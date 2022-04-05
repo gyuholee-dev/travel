@@ -47,7 +47,7 @@ $memberBox = <<<HTML
       <div class="buttons">
         <input class="btn" type="submit" name="confirm" value="로그인">
         <input class="btn" type="button" value="회원가입" 
-          onclick="location.href='?page=member&action=resigter'">
+          onclick="location.href='?page=member&action=register'">
       </div>
     </form>
   </div>

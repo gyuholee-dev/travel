@@ -23,8 +23,8 @@ if ($ACT == 'login') {
 } elseif ($ACT == 'logout') {
   logout();
 
-} elseif ($ACT == 'resigter' || $ACT == 'modify') {
-  include PAGE.'_resigter.php';
+} elseif ($ACT == 'register' || $ACT == 'modify') {
+  include PAGE.'_register.php';
   
 } elseif ($ACT == 'error') {
   $pageTitle = '오류';
