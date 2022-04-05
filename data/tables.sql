@@ -63,8 +63,9 @@ CREATE TABLE travel_booking (
 
 /* member 회원
 userid 회원아이디
-username 회원이름
 password 비밀번호
+username 회원이름
+avatar 프로필사진
 email 이메일
 phone 휴대폰번호 010-1234-5678
 address 주소
@@ -72,8 +73,9 @@ pgroup 권한 그룹: admin, user...
 */
 CREATE TABLE travel_member (
   userid CHAR(20) NOT NULL,
-  username VARCHAR(20),
   password CHAR(20),
+  username VARCHAR(20),
+  avatar VARCHAR(120),
   email CHAR(30),
   phone CHAR(13),
   address VARCHAR(120),
