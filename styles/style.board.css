@@ -1,28 +1,22 @@
-.headerbox {
-  display: block;
-  width: 1000px;
-  height: 1000px;
-  background-color: lightpink;
-  align-items: center;
-  text-align: center
+.headerbox{
+    width:800px; 
+    height:800px;
+    background-color:lightpink;
+    text-align:center;
+    align-items:center;
+}
+.table1{
+    width:600px;
+    border-collapse:collapse;
+    border-top:2px solid #999;
+    border-bottom:2px solid #999;
+}
+.table1 tr>th{
+    padding:5px;
+    border-bottom:1px solid #999;
+}
+.table1 tr>td{
+    padding:5px;
+    border-bottom:1px solid #999;
 }
 
-table.board {
-  width: 66%;
-  text-align: center;
-  align-items: center;
-  border-collapse: collapse;
-  border-top: 2px solid #999;
-  border-bottom: 2px solid #999;
-  position: absolute;
-}
-
-table.board tr>td {
-  padding: 5px;
-  border-bottom: 1px solid #999;
-}
-
-table.board tr>th {
-  padding: 5px;
-  border-bottom: 1px solid #999;
-}
