@@ -338,3 +338,7 @@ section.member input[type=radio], section.member input[type=checkbox] {
 #inputbox .buttons > *:not(:last-child) {
   margin-right: 10px;
 }
+
+#inputbox .buttons .hidden {
+  display: none;
+}

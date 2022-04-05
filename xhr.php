@@ -34,6 +34,6 @@ function xhr_test() {
 // 설정파일 로드 함수를 만들 경우 지정된 파일명만 로드하도록 함 
 
 // XHR 유저아이디 검사
-/* function xhr_checkId() {
+function xhr_checkId() {
   echo checkId($_GET['userid']);
-}  */
+}

@@ -64,6 +64,15 @@ function makeCode($max=32, $upper=false) {
 
 // 유저기능 함수 ------------------------------------------------
 
+// 유저 아이디 존재 검사
+// TODO: 테이블명 및 필드명 변수처리
+function checkId($userid) {
+  global $DB;
+  $sql = "SELECT * FROM travel_member WHERE userid = '$userid' ";
+  $res = mysqli_query($DB, $sql);
+  return mysqli_num_rows($res);
+}
+
 // 로그인 처리
 // 로그인은 별도 함수로 만들지 않음
 function setUserData($userData) {
@@ -96,7 +105,6 @@ function unsetUserData() {
   setcookie('USER', '', time()-3600);
   return true;
 }
-
 
 // DB 함수 ------------------------------------------------
 

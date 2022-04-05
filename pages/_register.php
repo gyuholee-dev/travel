@@ -36,8 +36,8 @@ $memberBox = <<<HTML
         <tr>
           <td>아이디</td>
           <td>
-            <input type="text" name="userid" value="" required>
-            <input class="btn small" type="button" value="확인">
+            <input type="text" name="userid" value="" required onchange="resetCheck()">
+            <input class="btn small" type="button" value="확인" onclick="checkId()">
             <!-- quest: &#63; check: &#10003; cross: &#10007; -->
           </td>
         </tr>
@@ -82,9 +82,11 @@ $memberBox = <<<HTML
       </table>
 
       <div class="buttons">
+        <input type="hidden" name="idcheked" value="false">
         <input type="hidden" name="action" value="$ACT">
-        <label><input type="checkbox" name="agree">약관동의</label>
-        <input class="btn" type="submit" name="confirm" value="회원가입">
+        <label><input type="checkbox" name="agree" value="off">약관동의</label>
+        <input class="hidden" type="submit" name="confirm" value="true">
+        <input class="btn" type="button" value="회원가입" onclick="sendRegister()">
       </div>
     </form>
   </div>
