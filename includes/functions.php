@@ -64,6 +64,24 @@ function makeCode($max=32, $upper=false) {
 
 // DB 함수 ------------------------------------------------
 
+// AES 암호화
+function AES_ENCRYPT($plaintext, $key) {
+  global $DB;
+  $sql = "SELECT AES_ENCRYPT('$plaintext', '$key') AS ciphertext ";
+  $result = mysqli_query($DB, $sql);
+  $row = mysqli_fetch_assoc($result);
+  return $row['ciphertext'];
+}
+
+// AES 암호해독
+function AES_DECRYPT($ciphertext_raw, $key) {
+  global $DB;
+  $sql = "SELECT AES_DECRYPT('$ciphertext_raw', '$key') AS plaintext ";
+  $result = mysqli_query($DB, $sql);
+  $row = mysqli_fetch_assoc($result);
+  return $row['plaintext'];
+}
+
 // DB 로그인
 // 주의: mysqli_report(MYSQLI_REPORT_ALL) 설정 필요
 function loginDB($dbConfig, $log=false) {

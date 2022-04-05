@@ -71,6 +71,11 @@ phone 휴대폰번호 010-1234-5678
 address 주소
 pgroup 권한 그룹: admin, user...
 */
+-- 패스워드 암호화 참고:
+-- https://zinoui.com/blog/storing-passwords-securely
+-- AES_ENCRYPT('password', 'key')
+-- AES_DECRYPT('password', 'key')
+
 CREATE TABLE travel_member (
   userid CHAR(20) NOT NULL,
   password BLOB,
