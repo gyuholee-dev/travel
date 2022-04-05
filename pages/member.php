@@ -9,6 +9,14 @@ $DO = $_REQUEST['do'] ?? '';
   header('Location: ?page=member&action='.$ACT);
 } */
 
+// 포스트 처리
+if (isset($_POST['confirm'])) {
+  $ACT = $_POST['action'];
+  $DO = $_POST['do'];
+
+
+}
+
 // 액션에 따라
 /* switch ($ACT) {
   case 'login':
@@ -44,7 +52,7 @@ $memberBox = '';
 if ($ACT == 'login') {
   $pageTitle = '로그인';
   $memberBox = <<<HTML
-    <div id="memberbox" class="$ACT">
+    <div id="inputbox" class="$ACT">
       <div class="title">$pageTitle</div>
       <form method="post" action="">
         <table>
@@ -58,6 +66,8 @@ if ($ACT == 'login') {
           </tr>
         </table>
         <div class="buttons">
+          <input type="hidden" name="action" value="$ACT">
+          <input type="hidden" name="do" value="login">
           <input class="btn" type="submit" name="confirm" value="로그인">
           <input class="btn" type="button" value="회원가입" 
             onclick="location.href='?page=member&action=join'">
@@ -69,7 +79,7 @@ if ($ACT == 'login') {
 } elseif ($ACT == 'join' || $ACT == 'modify') {
   $pageTitle = '회원가입';
   $memberBox = <<<HTML
-    <div id="memberbox" class="$ACT">
+    <div id="inputbox" class="$ACT">
       <div class="title">$pageTitle</div>
       <form method="post" action="" autocomplete="off">
         <table>

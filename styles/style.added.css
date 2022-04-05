@@ -202,7 +202,7 @@ section.member input[type=radio], section.member input[type=checkbox] {
   margin-right: 5px;
 }
 
-#memberbox {
+#inputbox {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -215,42 +215,42 @@ section.member input[type=radio], section.member input[type=checkbox] {
   margin-top: 25px;
 }
 
-#memberbox.login {
+#inputbox.login {
   margin-top: 80px;
 }
 
-#memberbox .title {
+#inputbox .title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-#memberbox .title.red {
+#inputbox .title.red {
   color: red;
 }
 
-#memberbox .box p {
+#inputbox .box p {
   padding: 0 5px;
   margin-bottom: 10px;
 }
 
-#memberbox table {
+#inputbox table {
   margin-bottom: 15px;
 }
 
-#memberbox table th, #memberbox table td {
+#inputbox table th, #inputbox table td {
   padding: 2px 5px;
   white-space: nowrap;
 }
 
-#memberbox table td.label {
+#inputbox table td.label {
   text-align: center;
   vertical-align: center;
   padding: 5px;
   position: relative;
 }
 
-#memberbox table td.label::after {
+#inputbox table td.label::after {
   content: "";
   display: block;
   position: absolute;
@@ -261,14 +261,14 @@ section.member input[type=radio], section.member input[type=checkbox] {
   z-index: 0;
 }
 
-#memberbox table td.label span {
+#inputbox table td.label span {
   background-color: white;
   padding: 0 5px;
   position: relative;
   z-index: 1;
 }
 
-#memberbox table input {
+#inputbox table input {
   height: 30px;
   min-width: 200px;
   padding: 3px;
@@ -276,17 +276,17 @@ section.member input[type=radio], section.member input[type=checkbox] {
   border-radius: 3px;
 }
 
-#memberbox table input[readonly] {
+#inputbox table input[readonly] {
   background-color: #eee;
 }
 
-#memberbox table input[type=file] {
+#inputbox table input[type=file] {
   height: 32px;
   min-width: initial;
   width: 200px;
 }
 
-#memberbox table input.btn.small {
+#inputbox table input.btn.small {
   font-size: 0.9em;
   height: 24px;
   min-width: initial;
@@ -294,20 +294,20 @@ section.member input[type=radio], section.member input[type=checkbox] {
   margin-left: -58px;
 }
 
-#memberbox table input.btn.small:hover {
+#inputbox table input.btn.small:hover {
   background-color: #ddd;
 }
 
-#memberbox table input.btn.small.hide {
+#inputbox table input.btn.small.hide {
   display: none;
 }
 
-#memberbox .buttons {
+#inputbox .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#memberbox .buttons > *:not(:last-child) {
+#inputbox .buttons > *:not(:last-child) {
   margin-right: 10px;
 }
