@@ -109,6 +109,31 @@ main {
   background-color: yellow;
 }
 
+.main-event-img {
+  background-color: black;
+}
+
+.main-event-img img {
+  filter: brightness(0.85);
+}
+
+.main-event-write * {
+  color: white;
+  text-shadow: 0 0 2px black, 1px 1px 8px black;
+}
+
+.main-event-button {
+  border-color: white;
+}
+
+.main-event-button input[type=button] {
+  color: white;
+}
+
+.main-event-button input[type=button]:hover {
+  cursor: pointer;
+}
+
 .second-right {
   background-color: white;
 }

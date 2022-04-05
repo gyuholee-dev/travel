@@ -1,4 +1,5 @@
 <?php // product.php
+// TODO: 액션 post, event 에 따라서 랜더링 스타일을 다르게 처리.
 
 // 리퀘스트
 $itemCode = $_REQUEST['itemcode'] ?? '';
