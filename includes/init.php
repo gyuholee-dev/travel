@@ -43,11 +43,16 @@ $ACT = isset($_REQUEST['action'])?$_REQUEST['action']:'list';
 $DO = isset($_REQUEST['do'])?$_REQUEST['do']:'view';
 
 // 메시지
-$MSG = [
-  'info' => '',
-  'success' => '',
-  'error' => ''
-];
+if (isset($_SESSION['MSG'])) {
+  $MSG = $_SESSION['MSG'];
+  unset($_SESSION['MSG']);
+} else {
+  $MSG = [
+    'info' => '',
+    'success' => '',
+    'error' => ''
+  ];
+}
 
 // DB 초기화 ------------------------------------------------
 
