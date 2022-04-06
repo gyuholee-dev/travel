@@ -22,7 +22,8 @@ $mainEvent_data = [
   'topimg' => FILE.$data['topimg'],
   'itemtitle' => $data['itemtitle'],
   'event' => explode("\n", $data['event'])[0], // 이벤트 첫줄만
-  'link' => '?page=product&action=event&itemcode='.$data['itemcode'],
+  // 'link' => '?page=product&action=event&itemcode='.$data['itemcode'],
+  'link' => '?page=event',
 ];
 
 $mainEventBox = renderElement(TPL.'mainEventBox.html', $mainEvent_data);
