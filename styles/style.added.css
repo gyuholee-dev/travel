@@ -378,3 +378,20 @@ section.mypage .personal-qna1 th,
 section.mypage .personal-qna1 td {
   text-align: center;
 }
+
+.review .indi-left {
+  width: 635px;
+  padding-left: 20px;
+}
+
+.review .indi-right {
+  width: 270px;
+}
+
+.review .indi-right .in-ri-img {
+  left: 60px;
+}
+
+.review .indi-right .in-tum {
+  right: 30px;
+}

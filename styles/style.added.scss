@@ -375,3 +375,19 @@ section.mypage {
     }
   }
 }
+
+.review {
+  .indi-left {
+    width: 635px;
+    padding-left: 20px;
+  }
+  .indi-right {
+    width: 270px;
+    .in-ri-img {
+      left: 60px;
+    }
+    .in-tum {
+      right: 30px;
+    }
+  }
+}
